@@ -1,0 +1,435 @@
+# Logfile created on Sat Aug 01 10:55:57 +0530 2009INFO: Mirroring assets from c:/ruby/lib/ruby/gems/1.8/gems/spree-0.8.5/vendor/extensions/localization/public to e:/bestprice/spree/bestprice/public
+INFO: Mirroring assets from e:/bestprice/spree/bestprice/vendor/extensions/site/public to e:/bestprice/spree/bestprice/public
+INFO: Loading mail preferences
+  [4;36;1mSQL (33.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (55.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mAppConfiguration Columns (215.0ms)[0m   [0;1mSHOW FIELDS FROM `configurations`[0m
+  [4;35;1mAppConfiguration Load (29.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+  [4;36;1mPreference Columns (45.0ms)[0m   [0;1mSHOW FIELDS FROM `preferences`[0m
+  [4;35;1mPreference Load (1.0ms)[0m   [0mSELECT * FROM `preferences` WHERE (`preferences`.owner_id = 1 AND `preferences`.owner_type = 'Configuration' AND (`preferences`.`group_id` IS NULL AND `preferences`.`group_type` IS NULL AND `preferences`.`attribute` = 'enable_mail_delivery')) LIMIT 1[0m
+NOTICE: Mail not enabled
+  [4;36;1mOrder Columns (45.0ms)[0m   [0;1mSHOW FIELDS FROM `orders`[0m
+INFO: Loading routes from c:/ruby/lib/ruby/gems/1.8/gems/spree-0.8.5/vendor/extensions/localization/config/routes.rb
+INFO: Loading routes from c:/ruby/lib/ruby/gems/1.8/gems/spree-0.8.5/vendor/extensions/payment_gateway/config/routes.rb
+INFO: Loading routes from c:/ruby/lib/ruby/gems/1.8/gems/spree-0.8.5/vendor/extensions/tax_calculator/config/routes.rb
+INFO: Loading routes from e:/bestprice/spree/bestprice/vendor/extensions/site/config/routes.rb
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-08-01 11:02:29) [GET]
+  Parameters: {"action"=>"index", "controller"=>"products"}
+  [4;36;1mTaxonomy Load (37.0ms)[0m   [0;1mSELECT * FROM `taxonomies`[0m
+  [4;35;1mTaxonomy Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `taxonomies`[0m
+  [4;36;1mTaxon Load (47.0ms)[0m   [0;1mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.taxonomy_id IN (276849385,402847427) AND (parent_id is null))[0m
+  [4;35;1mTaxon Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `taxons`[0m
+  [4;36;1mTaxon Load (34.0ms)[0m   [0;1mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.parent_id IN (1000,20000)) ORDER BY position[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mAppConfiguration Load (2.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache miss: Spree::Config ({})
+  [4;35;1mPreference Load (2.0ms)[0m   [0mSELECT * FROM `preferences` WHERE (`preferences`.owner_id = 1 AND `preferences`.owner_type = 'Configuration')[0m
+Cache write (will save 6.00ms): Spree::Config
+  [4;36;1mUser Columns (42.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mRole Columns (31.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mUser Load IDs For Limited Eager Loading (48.0ms)[0m   [0;1mSELECT DISTINCT `users`.id FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') LIMIT 1[0m
+  [4;35;1mUser Load Including Associations (1.0ms)[0m   [0mSELECT `users`.`id` AS t0_r0, `users`.`email` AS t0_r1, `users`.`crypted_password` AS t0_r2, `users`.`salt` AS t0_r3, `users`.`remember_token` AS t0_r4, `users`.`remember_token_expires_at` AS t0_r5, `users`.`created_at` AS t0_r6, `users`.`updated_at` AS t0_r7, `users`.`persistence_token` AS t0_r8, `users`.`single_access_token` AS t0_r9, `users`.`perishable_token` AS t0_r10, `users`.`login_count` AS t0_r11, `users`.`failed_login_count` AS t0_r12, `users`.`last_request_at` AS t0_r13, `users`.`current_login_at` AS t0_r14, `users`.`last_login_at` AS t0_r15, `users`.`current_login_ip` AS t0_r16, `users`.`last_login_ip` AS t0_r17, `users`.`login` AS t0_r18, `roles`.`id` AS t1_r0, `roles`.`name` AS t1_r1 FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') AND `users`.id IN (131329753)[0m
+  [4;36;1mProduct Columns (100.0ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM `products` WHERE (products.available_on <= '2009-08-01 05:32:31' and products.deleted_at is null) LIMIT 10[0m
+  [4;36;1mImage Columns (46.0ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (2.0ms)[0m   [0mSELECT `assets`.* FROM `assets` WHERE (`assets`.`viewable_id` IN (25673712,109241137,452235760,518820413,637144772,672404575,768308771,827682565,863378198) and `assets`.`viewable_type` = 'Product') AND ( (`assets`.`type` = 'Image' ) ) ORDER BY position[0m
+Rendering template within layouts/application
+Rendering products/index
+Rendered shared/_taxonomies (4.0ms)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mTaxConfiguration Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `configurations`[0m
+  [4;36;1mTaxConfiguration Load (3.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache miss: Spree::Tax::Config ({})
+  [4;35;1mPreference Load (0.0ms)[0m   [0mSELECT * FROM `preferences` WHERE (`preferences`.owner_id = 2 AND `preferences`.owner_type = 'Configuration')[0m
+Cache write (will save 2.00ms): Spree::Tax::Config
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (5.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (5.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (4.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+Rendered shared/_products (316.0ms)
+  [4;36;1mSQL (9.0ms)[0m   [0;1mSELECT count(`products`.id) AS count_id FROM `products` WHERE (products.available_on <= '2009-08-01 05:32:31' and products.deleted_at is null)[0m
+Rendered shared/_login_bar (23.0ms)
+Rendered shared/_store_menu (3.0ms)
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_language_bar (8.0ms)
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_footer (48.0ms)
+Completed in 3160ms (View: 505, DB: 454) | 200 OK [http://localhost/]
+  [4;35;1mOrder Columns (8.0ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-08-01 11:06:03) [GET]
+  Parameters: {"action"=>"index", "controller"=>"products"}
+  [4;35;1mTaxonomy Load (0.0ms)[0m   [0mSELECT * FROM `taxonomies`[0m
+  [4;36;1mTaxonomy Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `taxonomies`[0m
+  [4;35;1mTaxon Load (1.0ms)[0m   [0mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.taxonomy_id IN (276849385,402847427) AND (parent_id is null))[0m
+  [4;36;1mTaxon Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `taxons`[0m
+  [4;35;1mTaxon Load (1.0ms)[0m   [0mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.parent_id IN (1000,20000)) ORDER BY position[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mAppConfiguration Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `configurations`[0m
+  [4;36;1mAppConfiguration Load (1.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mRole Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mUser Load IDs For Limited Eager Loading (2.0ms)[0m   [0mSELECT DISTINCT `users`.id FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') LIMIT 1[0m
+  [4;36;1mUser Load Including Associations (0.0ms)[0m   [0;1mSELECT `users`.`id` AS t0_r0, `users`.`email` AS t0_r1, `users`.`crypted_password` AS t0_r2, `users`.`salt` AS t0_r3, `users`.`remember_token` AS t0_r4, `users`.`remember_token_expires_at` AS t0_r5, `users`.`created_at` AS t0_r6, `users`.`updated_at` AS t0_r7, `users`.`persistence_token` AS t0_r8, `users`.`single_access_token` AS t0_r9, `users`.`perishable_token` AS t0_r10, `users`.`login_count` AS t0_r11, `users`.`failed_login_count` AS t0_r12, `users`.`last_request_at` AS t0_r13, `users`.`current_login_at` AS t0_r14, `users`.`last_login_at` AS t0_r15, `users`.`current_login_ip` AS t0_r16, `users`.`last_login_ip` AS t0_r17, `users`.`login` AS t0_r18, `roles`.`id` AS t1_r0, `roles`.`name` AS t1_r1 FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') AND `users`.id IN (131329753)[0m
+  [4;35;1mProduct Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (products.available_on <= '2009-08-01 05:36:03' and products.deleted_at is null) LIMIT 10[0m
+  [4;35;1mImage Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `assets`[0m
+  [4;36;1mImage Load (2.0ms)[0m   [0;1mSELECT `assets`.* FROM `assets` WHERE (`assets`.`viewable_id` IN (25673712,109241137,452235760,518820413,637144772,672404575,768308771,827682565,863378198) and `assets`.`viewable_type` = 'Product') AND ( (`assets`.`type` = 'Image' ) ) ORDER BY position[0m
+Rendering template within layouts/application
+Rendering products/index
+Rendered shared/_taxonomies (4.0ms)
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mTaxConfiguration Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `configurations`[0m
+  [4;35;1mTaxConfiguration Load (1.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+Rendered shared/_products (296.0ms)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(`products`.id) AS count_id FROM `products` WHERE (products.available_on <= '2009-08-01 05:36:03' and products.deleted_at is null)[0m
+Rendered shared/_login_bar (20.0ms)
+Rendered shared/_store_menu (2.0ms)
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_language_bar (8.0ms)
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_footer (24.0ms)
+Completed in 1051ms (View: 364, DB: 66) | 200 OK [http://localhost/]
+  [4;35;1mOrder Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2009-08-01 11:06:18) [GET]
+  Parameters: {"action"=>"show", "id"=>"ruby-on-rails-stein", "controller"=>"products"}
+  [4;35;1mTaxonomy Load (0.0ms)[0m   [0mSELECT * FROM `taxonomies`[0m
+  [4;36;1mTaxonomy Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `taxonomies`[0m
+  [4;35;1mTaxon Load (1.0ms)[0m   [0mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.taxonomy_id IN (276849385,402847427) AND (parent_id is null))[0m
+  [4;36;1mTaxon Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `taxons`[0m
+  [4;35;1mTaxon Load (0.0ms)[0m   [0mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.parent_id IN (1000,20000)) ORDER BY position[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mAppConfiguration Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `configurations`[0m
+  [4;36;1mAppConfiguration Load (1.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mRole Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mUser Load IDs For Limited Eager Loading (0.0ms)[0m   [0mSELECT DISTINCT `users`.id FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') LIMIT 1[0m
+  [4;36;1mUser Load Including Associations (1.0ms)[0m   [0;1mSELECT `users`.`id` AS t0_r0, `users`.`email` AS t0_r1, `users`.`crypted_password` AS t0_r2, `users`.`salt` AS t0_r3, `users`.`remember_token` AS t0_r4, `users`.`remember_token_expires_at` AS t0_r5, `users`.`created_at` AS t0_r6, `users`.`updated_at` AS t0_r7, `users`.`persistence_token` AS t0_r8, `users`.`single_access_token` AS t0_r9, `users`.`perishable_token` AS t0_r10, `users`.`login_count` AS t0_r11, `users`.`failed_login_count` AS t0_r12, `users`.`last_request_at` AS t0_r13, `users`.`current_login_at` AS t0_r14, `users`.`last_login_at` AS t0_r15, `users`.`current_login_ip` AS t0_r16, `users`.`last_login_ip` AS t0_r17, `users`.`login` AS t0_r18, `roles`.`id` AS t1_r0, `roles`.`name` AS t1_r1 FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') AND `users`.id IN (131329753)[0m
+  [4;35;1mProduct Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`permalink` = 'ruby-on-rails-stein') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering products/show
+  [4;35;1mImage Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `assets`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `assets` WHERE (`assets`.viewable_id = 452235760 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) )[0m
+  [4;35;1mImage Load (0.0ms)[0m   [0mSELECT * FROM `assets` WHERE (`assets`.viewable_id = 452235760 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) ) ORDER BY position LIMIT 1[0m
+[paperclip] Paperclip attachment attachment on Image initialized.
+Rendered products/_image (38.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `assets` WHERE (`assets`.viewable_id = 452235760 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) )[0m
+  [4;35;1mImage Load (1.0ms)[0m   [0mSELECT * FROM `assets` WHERE (`assets`.viewable_id = 452235760 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) ) ORDER BY position[0m
+[paperclip] Paperclip attachment attachment on Image initialized.
+[paperclip] Paperclip attachment attachment on Image initialized.
+Rendered products/_thumbnails (29.0ms)
+  [4;36;1mProductProperty Columns (40.0ms)[0m   [0;1mSHOW FIELDS FROM `product_properties`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `product_properties` WHERE (`product_properties`.product_id = 452235760)[0m
+  [4;36;1mProductProperty Load (0.0ms)[0m   [0;1mSELECT * FROM `product_properties` WHERE (`product_properties`.product_id = 452235760)[0m
+  [4;35;1mProperty Columns (15.0ms)[0m   [0mSHOW FIELDS FROM `properties`[0m
+  [4;36;1mProperty Load (1.0ms)[0m   [0;1mSELECT * FROM `properties` WHERE (`properties`.`id` = 935300328)[0m
+  [4;35;1mProperty Load (1.0ms)[0m   [0mSELECT * FROM `properties` WHERE (`properties`.`id` = 5318564)[0m
+Rendered products/_properties (108.0ms)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mTaxConfiguration Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `configurations`[0m
+  [4;36;1mTaxConfiguration Load (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mVariant Load (29.0ms)[0m   [0mSELECT * FROM `variants` WHERE (`variants`.product_id = 452235760)[0m
+  [4;36;1mVariant Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `variants`[0m
+  [4;35;1moption_values_variants Columns (33.0ms)[0m   [0mSHOW FIELDS FROM `option_values_variants`[0m
+  [4;36;1mOptionValue Load (27.0ms)[0m   [0;1mSELECT * FROM `option_values` INNER JOIN `option_values_variants` ON `option_values`.id = `option_values_variants`.option_value_id WHERE (`option_values_variants`.variant_id = 154744438 )[0m
+  [4;35;1mInventoryUnit Columns (61.0ms)[0m   [0mSHOW FIELDS FROM `inventory_units`[0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `inventory_units` WHERE (((`inventory_units`.`state` IN ('on_hand')) AND (`inventory_units`.variant_id = 154744438)) AND (`inventory_units`.variant_id = 154744438))[0m
+Rendered products/_cart_form (307.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`permalink` = 'ruby-on-rails-stein') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`permalink` = 'ruby-on-rails-stein') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`permalink` = 'ruby-on-rails-stein') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`permalink` = 'ruby-on-rails-stein') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`permalink` = 'ruby-on-rails-stein') LIMIT 1[0m
+Rendered shared/_login_bar (21.0ms)
+Rendered shared/_store_menu (2.0ms)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_language_bar (6.0ms)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_footer (19.0ms)
+Completed in 1302ms (View: 573, DB: 253) | 200 OK [http://localhost/products/ruby-on-rails-stein]
+  [4;36;1mOrder Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `orders`[0m
+INFO: Mirroring assets from c:/ruby/lib/ruby/gems/1.8/gems/spree-0.8.5/vendor/extensions/localization/public to e:/bestprice/spree/bestprice/public
+INFO: Mirroring assets from e:/bestprice/spree/bestprice/vendor/extensions/site/public to e:/bestprice/spree/bestprice/public
+INFO: Loading mail preferences
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mAppConfiguration Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `configurations`[0m
+  [4;35;1mAppConfiguration Load (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+  [4;36;1mPreference Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `preferences`[0m
+  [4;35;1mPreference Load (1.0ms)[0m   [0mSELECT * FROM `preferences` WHERE (`preferences`.owner_id = 1 AND `preferences`.owner_type = 'Configuration' AND (`preferences`.`group_id` IS NULL AND `preferences`.`group_type` IS NULL AND `preferences`.`attribute` = 'enable_mail_delivery')) LIMIT 1[0m
+NOTICE: Mail not enabled
+  [4;36;1mOrder Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `orders`[0m
+INFO: Loading routes from c:/ruby/lib/ruby/gems/1.8/gems/spree-0.8.5/vendor/extensions/localization/config/routes.rb
+INFO: Loading routes from c:/ruby/lib/ruby/gems/1.8/gems/spree-0.8.5/vendor/extensions/payment_gateway/config/routes.rb
+INFO: Loading routes from c:/ruby/lib/ruby/gems/1.8/gems/spree-0.8.5/vendor/extensions/tax_calculator/config/routes.rb
+INFO: Loading routes from e:/bestprice/spree/bestprice/vendor/extensions/site/config/routes.rb
