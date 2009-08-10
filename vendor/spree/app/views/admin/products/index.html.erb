@@ -1,0 +1,79 @@
+<% content_for :head do %>
+  <%= calendar_date_select_includes %>
+<% end %>
+
+<% render :partial => 'admin/shared/product_sub_menu' %>
+
+<div class='toolbar'>
+  <ul class='actions'>
+    <li id="new_ot_link">
+      <%= button_link_to_remote t("new_product"), 
+                         {:url => new_object_url, 
+                         :method => :get,
+                         :update => "new-product",
+                         :before => "Element.hide('new_ot_link');Element.show('busy_indicator')", 
+                         :complete => "Element.hide('busy_indicator')"}, :icon => 'add' %>
+    </li>
+  </ul>
+  <br class='clear' />
+</div>
+
+<h1><%= "#{t("actions.listing")} #{t("products")}" %></h1>
+
+<%= image_tag "spinner.gif", :plugin=>"spree", :style => "display:none", :id => 'busy_indicator' %>
+<div id="new-product"></div>
+
+<table class="index">
+  <tr>
+    <th><%= t("sku") %></td>
+    <th><%= order_by_link :name, :text => t("name") %></td>
+    <th><%= order_by_link :master_price, :text => t("master_price") %></td>
+    <th>&nbsp;</th>
+  </tr>
+<% @collection.each do |product| %>
+  <tr <%= 'style="color:red;"' unless product.deleted_at.nil? %>>
+    <td><%= product.sku %></td>
+    <td><%= product.name %></td>
+    <td><%= product.master_price %></td>
+    <td class="actions">
+      <%= link_to_edit product if product.deleted_at.nil?  %>
+      &nbsp;
+      <%= link_to_delete product if product.deleted_at.nil?  %>
+    </td>
+  </tr>
+<% end %>
+</table>
+<%= page_links(:prev => "&#171; #{t('previous')}", :next => "#{t('next')} &#187;") if @search.page_count > 1 %>						
+
+<% content_for :sidebar do %>
+
+  <% form_for [:admin, @search] do |f| %>
+
+    <div class="box">
+      <h3><%= t(:search) %></h3>
+
+      <% f.fields_for @search.conditions do |products| %>
+      <p>
+        <label><%= t("name") %></label><br />
+        <%= products.text_field :name_contains, :size => 15 %>
+      </p>
+
+      <% products.fields_for products.object.variants do |variants| %>
+        <p>
+          <label><%= t("sku") %></label><br />
+          <%= variants.text_field :sku_contains, :size => 15 %>
+        </p>
+      <% end %>                
+      <p>
+        <label><%= t("show_deleted") %></label><br />
+        <%= products.check_box :deleted_at_is_not_null, {}, "1", "" %>
+      </p>
+      <%end%>
+      <p class="form-buttons">
+        <%= button t("search") %>
+      </p>
+    </div>
+  <% end %>
+
+<% end %>
+

@@ -1,0 +1,9 @@
+<%= render :partial => 'admin/shared/configuration_menu' %>
+
+<h1><%= t("inventory_settings") %></h1>
+
+<h4>Products with a zero inventory will <%= show_not(Spree::Config[:show_zero_stock_products]) %> be displayed</h4>
+<h4>Backordering is <%= show_not(Spree::Config[:allow_backorders]) %> allowed</h4>
+
+<%= link_to_with_icon 'edit', t("edit"), edit_admin_inventory_settings_path %>
+
