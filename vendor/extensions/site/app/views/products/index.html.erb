@@ -1,0 +1,5 @@
+<% content_for :sidebar do %>
+	<%= render :partial => "shared/taxonomies_all" %>
+<% end %>
+<%=image_tag "browse_by_catgy.gif" ,:height => "28" , :width => "219" , :alt=>"Browse By Category"%>
+<%= page_links(:prev => "&#171; #{t('previous')}", :next => "#{t('next')} &#187;") if @search.page_count > 1 %>		
