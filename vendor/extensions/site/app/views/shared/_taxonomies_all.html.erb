@@ -1,11 +1,29 @@
-<div id="taxonomies" class="sidebar-item">
 <% @taxonomies.each do |taxonomy| %>
-	<h3><%= t("shop_by_taxonomy", :taxonomy => taxonomy.name.singularize) %></h3>
-	<ul class="navigation-list">
-	<% taxonomy.root.children.each do |taxon| %>
-	  
-	  <li<%= ' class="current"' if @taxon and ([@taxon] + @taxon.ancestors).include?(taxon) %>><%= link_to taxon.name, seo_url(taxon) %></li>
+<%if taxonomy.name == 'Categories'%>
+<div class="span-24">
+	<%count = 1%>
+<% taxonomy.root.children.each do |taxon| %>
+	  <%if count == 4%>
+	  <div class="span-6 last ">
+	  	<%count = 0%>
+	  <%else%>	
+	  	<div class="span-6 ">
+	  <%end%>		
+  		<div class = "prepend-1">
+  			<font class="browsecatehead"><%= taxon.name%></font>
+		</div>
+		<hr />
+		<%@taxons = Taxon.find(:all,:conditions => ['parent_id = ?' , taxon.id])%>
+		<div class="prepend-top">
+			<%@taxons.each do |taxon_second|%>
+				<%=link_to taxon_second.name , "/t/#{taxonomy.name}/#{taxon.name}/#{taxon_second.name}/" ,:class => "browsecatecontent"%>
+			<%end%>	
+		</div>
+	  </div>
+	 <%count += 1 %>
 	<% end %>
-	</ul>
-<% end %>
-</div>
+  	</div>
+	<%end%>
+<% end %>	
+
+

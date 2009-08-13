@@ -1,5 +1,8 @@
-<% content_for :sidebar do %>
-	<%= render :partial => "shared/taxonomies_all" %>
-<% end %>
-<%=image_tag "browse_by_catgy.gif" ,:height => "28" , :width => "219" , :alt=>"Browse By Category"%>
-<%= page_links(:prev => "&#171; #{t('previous')}", :next => "#{t('next')} &#187;") if @search.page_count > 1 %>		
+<div id="products" class="container">
+	<hr />
+	<div class="span-24 last">
+		<h1><%=image_tag "browse_by_catgy.gif" ,:height => "28" , :width => "219" , :alt=>"Browse By Category"%>				</h1>
+	</div>
+	<%= render :partial => "shared/taxonomies_all" %>	
+</div>
+
