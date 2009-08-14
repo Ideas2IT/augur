@@ -1,0 +1,11 @@
+<div id="products_show">
+	<h1><%= @taxon.name %></h1>
+	<hr/>
+	<% if @taxon.children.empty? %>
+	  <%= render :partial => "shared/products.html.erb", :locals => {:products => @products, :taxon => @taxon } %>
+	  <%= page_links(:prev => "&#171; #{t('previous')}", :next => "#{t('next')} &#187;") if @search.page_count > 1 %>
+	<% else %>
+	  <%= render :partial => "taxon", :collection => @taxon.children %>
+	<% end %>
+</div>
+
