@@ -1,3 +1,3 @@
 class Store < ActiveRecord::Base
-  has_many :products ,:through => :product_stores
+  has_and_belongs_to_many :products
 end

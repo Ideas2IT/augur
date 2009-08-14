@@ -1,4 +1,19 @@
+@import blueprint.sass
+@import blueprint/modules/scaffolding.sass
+@import compass/reset.sass
+
+// Trying out some of these optional modules that provide handy mixins
+@import compass/utilities/general/inline_block.sass
+@import compass/utilities/lists.sass
+@import compass/utilities/links.sass
+
++blueprint
+// Remove the scaffolding when you're ready to start doing visual design.
+// Or leave it in if you're happy with how blueprint looks out-of-the-box
++blueprint-scaffolding
+
 !fontfamily = "Trebuchet MS","Arial","Helvetica","sans-serif"
+!product_font_family = "Arial","Helvetica","sans-serif"
 
 .browsecatehead 
 	:border-bottom = 0px "solid" #F1F1F1
@@ -12,9 +27,27 @@
 
 .browsecatecontent 
 	:color = #006699
-	:font-family = "Trebuchet MS","Arial","Helvetica","sans-serif"
+	:font-family = !fontfamily
 	:font-size = 14px
 	:line-height = 24px
-
+	
+#products_show
+	+no-bullets
+.product_name
+	:color = #CC3333
+	:font-family = "Verdana","Arial","Helvetica","sans-serif"
+	:font-size = 12px
+	:font-weight = "bold"
+	:line-height = 24px
+.price_text
+	:color = #000000
+	:font-family = !product_font_family
+	:font-size = 12px
+	:line-height = 24px	
+.product_available
+	:color = #303030
+	:font-family = !product_font_family
+	:font-size = 11px
+	:line-height = 24px
 
 	
