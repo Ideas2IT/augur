@@ -13,12 +13,12 @@
 				 <font class="product_available">
 				 	<%=show_text_available(product)%> <%=product.stores.count unless product.stores.empty?%> <%=show_text_store(product)%>
 				 </font>
-				 <h5 class="price_text">
-				 	prices starting from <%=link_to "<span class='price selling'>#{product_price(product)}</span>" , seo_url(taxon, product)%> at 
+				 <div class="price_text">
+				 	prices starting from <%=link_to "<span class='price selling'>#{product_price(product)}</span>" , seo_url(taxon, product)%>  
 					<%product.stores.each do |store|%>
-						<%=store.name%>
+						at <%=store.name%>
 					<%end%>	
-				 </h5>	
+				 </div>	
 			</div>
 		<% end %>
 	  <% end %>
