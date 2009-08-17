@@ -1,0 +1,39 @@
+<% content_for :sidebar do %>
+  <td id="shop-by-col" valign="top">
+  	<%= render :partial => "shared/taxonomies" %>
+  </td>
+<% end %>
+
+<%= error_messages_for :search %>
+
+<% form_for @search do |f| %>
+  <p>
+    <%= t('ext.search.keywords') %>:<br/>
+    <%= f.text_field :keywords %>
+  </p>
+  <p>
+    <%= t('ext.search.belonging_to') %>:<br/>
+    <select name="search[taxon_id]" id="search_taxon_id" >
+      <option value=""><%= t('ext.search.any_classification')%></option>
+      <%= option_groups_from_collection_for_select(
+        TaxonChooser::OPTIONS,
+        :options, :type_name, # <- groups
+        :id, :name,           # <- items
+        @search.taxon_id
+      ) %>
+    </select>
+  </p>
+  <p>
+    <%= t('ext.search.include_subtaxons') %>:<br/>
+      <%= f.check_box :subtaxons %>
+  </p>
+  <p>
+    <%= t('ext.search.minimum_price') %>:<br/>
+    <%= f.text_field :min_price %>
+  </p>
+  <p>
+    <%= t('ext.search.maximum_price') %>:<br/>
+    <%= f.text_field :max_price %>
+  </p>
+  <p><%= f.submit t('ext.search.send') %></p>
+<% end %>

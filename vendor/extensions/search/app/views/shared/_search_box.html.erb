@@ -1,0 +1,14 @@
+<!-- search box -->
+<% if controller.controller_name == 'taxons'
+  search_path_local = seo_url(@taxon)
+else
+  search_path_local = products_path
+end -%>
+
+<div style="text-align: center;">
+<% form_tag search_path_local, :id => 'search_form', :method => 'get' do %>
+  <%= text_field_tag :keywords, params[:keywords] %>
+  <%= submit_tag t('ext.search.search'), :name => nil %>
+<% end %>
+<%= link_to(t('ext.search.advanced'), new_search_path) %>
+</div>
