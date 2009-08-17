@@ -13,9 +13,6 @@ class SearchesController < Spree::BaseController
   # Validates the search object and redirect to show action renaming the parameters to not clash with searchlogic.
   def create
     @search = Search.new(params[:search])
-    
-    puts ">>>>>>in create params : #{params[:search]}"
-    
     if @search.valid?
 
       # Build the custom parameters hash and don't clutter the url with empty params.
@@ -47,7 +44,6 @@ class SearchesController < Spree::BaseController
     # If setted to default, clean the param it doesn't need to clutter the url.
     params[:sort] = nil if @sort_by_and_as == ["available_on", "DESC"]
 
-    puts ">>>>>>search params : #{params[:search]}"
     @search = Product.active.new_search(params[:search])
 
     if params[:taxon]
