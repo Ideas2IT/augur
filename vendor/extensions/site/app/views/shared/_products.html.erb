@@ -1,9 +1,14 @@
 <div class="container">
 	<% products.each do |product| %>
 	  <% if Spree::Config[:show_zero_stock_products] || product.has_stock? %>
-	  	<% if taxon.nil? %>
-	  	  	<%= link_to small_image(product), product %>
-	  	  	<%= link_to product.name + "<span class='price selling'>#{product_price(product)}</span>", product, :class => 'info' %>			  	
+	  	<div class="span-24">
+	  		<% if taxon.nil? %>
+	  	  	<div class= "column span-12 push-6">
+				<%= link_to small_image(product), product %>
+			</div>
+	  	  	<div class="column span-8 last pull-8">
+			<%= link_to product.name + "<span class='price selling'>#{product_price(product)}</span>", product, :class => 'info' %>			  	
+			</div>
 	    <% else %>
 		   	<div class= "column span-12 push-6">
 				<%= link_to small_image(product), seo_url(taxon, product) %>			
@@ -21,6 +26,7 @@
 				 </div>	
 			</div>
 		<% end %>
+	  	</div>
 	  <% end %>
 	<% end %>
 </div>
