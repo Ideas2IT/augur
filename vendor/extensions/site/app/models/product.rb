@@ -7,8 +7,8 @@ class Product < ActiveRecord::Base
   has_many :variants, :dependent => :destroy
   has_many :images, :as => :viewable, :order => :position, :dependent => :destroy
   has_many :product_properties, :dependent => :destroy, :attributes => true
+  has_many :product_stores, :dependent => :destroy, :attributes => true
   has_many :properties, :through => :product_properties
-  has_and_belongs_to_many :stores
   belongs_to :tax_category
   has_and_belongs_to_many :taxons
   belongs_to :shipping_category
