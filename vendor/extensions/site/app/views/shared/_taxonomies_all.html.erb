@@ -1,0 +1,29 @@
+<% @taxonomies.each do |taxonomy| %>
+<%if taxonomy.name == 'Categories'%>
+<div class="span-24">
+	<%count = 1%>
+<% taxonomy.root.children.each do |taxon| %>
+	  <%if count == 4%>
+	  <div class="span-6 last ">
+	  	<%count = 0%>
+	  <%else%>	
+	  	<div class="span-6 ">
+	  <%end%>		
+  		<div class = "prepend-1">
+  			<font class="browsecatehead"><%= taxon.name%></font>
+		</div>
+		<hr />
+		<%@taxons = Taxon.find(:all,:conditions => ['parent_id = ?' , taxon.id])%>
+		<div class="prepend-top">
+			<%@taxons.each do |taxon_second|%>
+				<%=link_to taxon_second.name , "/t/#{taxonomy.name}/#{taxon.name}/#{taxon_second.name}/" ,:class => "browsecatecontent"%>
+			<%end%>	
+		</div>
+	  </div>
+	 <%count += 1 %>
+	<% end %>
+  	</div>
+	<%end%>
+<% end %>	
+
+
