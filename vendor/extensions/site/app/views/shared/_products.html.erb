@@ -11,12 +11,12 @@
 		    <div class="column span-8 last pull-8">
 				<%= link_to product.name , seo_url(taxon, product), :class=>"product_name" %><br/>  							  						   					   					   		
 				 <font class="product_available">
-				 	<%=show_text_available(product)%> <%=product.stores.count unless product.stores.empty?%> <%=show_text_store(product)%>
+				 	<%=show_text_available(product)%> <%=product.product_stores.count unless product.product_stores.empty?%> <%=show_text_store(product)%>
 				 </font>
 				 <div class="price_text">
 				 	prices starting from <%=link_to "<span class='price selling'>#{product_price(product)}</span>" , seo_url(taxon, product)%>  
-					<%product.stores.each do |store|%>
-						at <%=store.name%>
+					<%product.product_stores.each do |product_store|%>
+						at <%=product_store.store.name%>
 					<%end%>	
 				 </div>	
 			</div>

@@ -41,18 +41,18 @@ module ProductsHelper
   end
   
   def show_text_available(product)
-    if product.stores.size == 0
+    if product.product_stores.size == 0
       available = "Not Available"
-    elsif product.stores.size >= 1
+    elsif product.product_stores.size >= 1
       available = "Available at "
     end
     return available
   end
   
   def show_text_store(product)
-    if product.stores.size == 1 
+    if product.product_stores.size == 1 
       store = "store"
-    elsif product.stores.size > 1
+    elsif product.product_stores.size > 1
       store = "stores"
     end
     return store
