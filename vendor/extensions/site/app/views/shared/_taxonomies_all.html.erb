@@ -21,7 +21,7 @@
 		<%@taxons = Taxon.find(:all,:conditions => ['parent_id = ?' , taxon.id])%>
 		<div class="prepend-top">
 			<%@taxons.each do |taxon_second|%>
-				<%=link_to taxon_second.name , "/t/#{taxonomy.name}/#{taxon.name}/#{taxon_second.name}/" ,:class => "browsecatecontent"%>&nbsp;
+				<%=link_to taxon_second.name , "/t/#{taxonomy.name.gsub(' ' , '-')}/#{taxon.name.gsub(' ' , '-')}/#{taxon_second.name.gsub(' ' , '-')}/" ,:class => "browsecatecontent"%>&nbsp;
 			<%end%>	
 		</div>
 	  </div>
