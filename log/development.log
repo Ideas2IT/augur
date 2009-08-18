@@ -4640,3 +4640,1721 @@ Cache hit: Spree::Config ({})
 Rendered shared/_footer (17.0ms)
 Completed in 647ms (View: 176, DB: 28) | 200 OK [http://localhost/products?keywords=ruby]
   [4;35;1mOrder Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
+INFO: Mirroring assets from e:/bestprice/augur/vendor/spree/vendor/extensions/localization/public to e:/bestprice/augur/public
+INFO: Mirroring assets from e:/bestprice/augur/vendor/extensions/site/public to e:/bestprice/augur/public
+INFO: Loading mail preferences
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mAppConfiguration Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `configurations`[0m
+  [4;35;1mAppConfiguration Load (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+  [4;36;1mPreference Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `preferences`[0m
+  [4;35;1mPreference Load (0.0ms)[0m   [0mSELECT * FROM `preferences` WHERE (`preferences`.owner_id = 1 AND `preferences`.owner_type = 'Configuration' AND (`preferences`.`attribute` = 'enable_mail_delivery' AND `preferences`.`group_id` IS NULL AND `preferences`.`group_type` IS NULL)) LIMIT 1[0m
+NOTICE: Mail not enabled
+  [4;36;1mOrder Columns (10.0ms)[0m   [0;1mSHOW FIELDS FROM `orders`[0m
+INFO: Loading routes from e:/bestprice/augur/vendor/spree/vendor/extensions/localization/config/routes.rb
+INFO: Loading routes from e:/bestprice/augur/vendor/spree/vendor/extensions/payment_gateway/config/routes.rb
+INFO: Loading routes from e:/bestprice/augur/vendor/spree/vendor/extensions/tax_calculator/config/routes.rb
+INFO: Loading routes from e:/bestprice/augur/vendor/extensions/search/config/routes.rb
+INFO: Loading routes from e:/bestprice/augur/vendor/extensions/site/config/routes.rb
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-08-17 20:17:30) [GET]
+  Parameters: {"action"=>"index", "controller"=>"products"}
+  [4;36;1mTaxonomy Load (0.0ms)[0m   [0;1mSELECT * FROM `taxonomies`[0m
+  [4;35;1mTaxonomy Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `taxonomies`[0m
+  [4;36;1mTaxon Load (0.0ms)[0m   [0;1mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.taxonomy_id IN (276849385,402847427) AND (parent_id is null))[0m
+  [4;35;1mTaxon Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `taxons`[0m
+  [4;36;1mTaxon Load (1.0ms)[0m   [0;1mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.parent_id IN (1000,20000)) ORDER BY position[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mAppConfiguration Load (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache miss: Spree::Config ({})
+  [4;35;1mPreference Load (0.0ms)[0m   [0mSELECT * FROM `preferences` WHERE (`preferences`.owner_id = 1 AND `preferences`.owner_type = 'Configuration')[0m
+Cache write (will save 2.00ms): Spree::Config
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mRole Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mUser Load IDs For Limited Eager Loading (0.0ms)[0m   [0;1mSELECT DISTINCT `users`.id FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') LIMIT 1[0m
+  [4;35;1mUser Load Including Associations (0.0ms)[0m   [0mSELECT `users`.`id` AS t0_r0, `users`.`email` AS t0_r1, `users`.`crypted_password` AS t0_r2, `users`.`salt` AS t0_r3, `users`.`remember_token` AS t0_r4, `users`.`remember_token_expires_at` AS t0_r5, `users`.`created_at` AS t0_r6, `users`.`updated_at` AS t0_r7, `users`.`persistence_token` AS t0_r8, `users`.`single_access_token` AS t0_r9, `users`.`perishable_token` AS t0_r10, `users`.`login_count` AS t0_r11, `users`.`failed_login_count` AS t0_r12, `users`.`last_request_at` AS t0_r13, `users`.`current_login_at` AS t0_r14, `users`.`last_login_at` AS t0_r15, `users`.`current_login_ip` AS t0_r16, `users`.`last_login_ip` AS t0_r17, `users`.`login` AS t0_r18, `roles`.`id` AS t1_r0, `roles`.`name` AS t1_r1 FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') AND `users`.id IN (131329753)[0m
+  [4;36;1mProduct Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM `products` WHERE (products.available_on <= '2009-08-17 14:47:31' and products.deleted_at is null) ORDER BY `products`.`available_on` DESC LIMIT 10[0m
+  [4;36;1mImage Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (0.0ms)[0m   [0mSELECT `assets`.* FROM `assets` WHERE (`assets`.`viewable_id` IN (827682565,863378198,768308771,109241137,518820413,672404575,637144772,452235760,25673712) and `assets`.`viewable_type` = 'Product') AND ( (`assets`.`type` = 'Image' ) ) ORDER BY position[0m
+Rendering template within layouts/application
+Rendering products/index
+  [4;36;1mTaxon Load (0.0ms)[0m   [0;1mSELECT * FROM `taxons` WHERE (parent_id = 1001)[0m
+  [4;35;1mTaxon Load (1.0ms)[0m   [0mSELECT * FROM `taxons` WHERE (parent_id = 1002)[0m
+  [4;36;1mTaxon Load (0.0ms)[0m   [0;1mSELECT * FROM `taxons` WHERE (parent_id = 1003)[0m
+Rendered shared/_taxonomies_all (6.0ms)
+Rendered shared/_login_bar (15.0ms)
+Rendered shared/_store_menu (3.0ms)
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_language_bar (7.0ms)
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_footer (18.0ms)
+Completed in 1181ms (View: 79, DB: 28) | 200 OK [http://localhost/]
+  [4;35;1mOrder Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TaxonsController#show (for 127.0.0.1 at 2009-08-17 20:17:36) [GET]
+  Parameters: {"action"=>"show", "id"=>["Categories", "Clothing", "Shirts"], "controller"=>"taxons"}
+  [4;35;1mTaxonomy Load (0.0ms)[0m   [0mSELECT * FROM `taxonomies`[0m
+  [4;36;1mTaxonomy Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `taxonomies`[0m
+  [4;35;1mTaxon Load (1.0ms)[0m   [0mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.taxonomy_id IN (276849385,402847427) AND (parent_id is null))[0m
+  [4;36;1mTaxon Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `taxons`[0m
+  [4;35;1mTaxon Load (1.0ms)[0m   [0mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.parent_id IN (1000,20000)) ORDER BY position[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mAppConfiguration Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `configurations`[0m
+  [4;36;1mAppConfiguration Load (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mTaxon Load (1.0ms)[0m   [0mSELECT * FROM `taxons` WHERE (`taxons`.`permalink` = 'Categories/Clothing/Shirts/') LIMIT 1[0m
+  [4;36;1mProduct Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mProduct Load (2.0ms)[0m   [0mSELECT `products`.* FROM `products` INNER JOIN `products_taxons` ON `products`.id = `products_taxons`.product_id WHERE (((products.available_on <= '2009-08-17 14:47:36' and products.deleted_at is null) AND (`products_taxons`.taxon_id = 2000 )) AND (`products_taxons`.taxon_id = 2000 )) ORDER BY `products`.`available_on` DESC LIMIT 10[0m
+  [4;36;1mImage Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (0.0ms)[0m   [0mSELECT `assets`.* FROM `assets` WHERE (`assets`.`viewable_id` = 672404575 and `assets`.`viewable_type` = 'Product') AND ( (`assets`.`type` = 'Image' ) ) ORDER BY position[0m
+Rendering template within layouts/application
+Rendering taxons/show
+  [4;36;1mSQL (4.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `taxons` WHERE (`taxons`.parent_id = 2000)[0m
+  [4;35;1mTaxon Load (1.0ms)[0m   [0mSELECT * FROM `taxons` WHERE (`taxons`.parent_id = 2000) ORDER BY position[0m
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT `products`.* FROM `products` INNER JOIN `products_taxons` ON `products`.id = `products_taxons`.product_id WHERE (((products.available_on <= '2009-08-17 14:47:37' and products.deleted_at is null) AND (`products_taxons`.taxon_id = 3000 )) AND (`products_taxons`.taxon_id = 3000 )) LIMIT 25[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mTaxon Load (1.0ms)[0m   [0mSELECT * FROM `taxons` WHERE (`taxons`.parent_id = 3000) ORDER BY position[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `assets` WHERE (`assets`.viewable_id = 518820413 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) )[0m
+  [4;35;1mImage Load (0.0ms)[0m   [0mSELECT * FROM `assets` WHERE (`assets`.viewable_id = 518820413 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) ) ORDER BY position LIMIT 1[0m
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;36;1mProductStore Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `product_stores`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `product_stores` WHERE (`product_stores`.product_id = 518820413)[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mTaxConfiguration Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `configurations`[0m
+  [4;36;1mTaxConfiguration Load (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache miss: Spree::Tax::Config ({})
+  [4;35;1mPreference Load (1.0ms)[0m   [0mSELECT * FROM `preferences` WHERE (`preferences`.owner_id = 2 AND `preferences`.owner_type = 'Configuration')[0m
+Cache write (will save 19.00ms): Spree::Tax::Config
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `assets` WHERE (`assets`.viewable_id = 25673712 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) )[0m
+  [4;35;1mImage Load (0.0ms)[0m   [0mSELECT * FROM `assets` WHERE (`assets`.viewable_id = 25673712 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) ) ORDER BY position LIMIT 1[0m
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `product_stores` WHERE (`product_stores`.product_id = 25673712)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM `assets` WHERE (`assets`.viewable_id = 109241137 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) )[0m
+  [4;36;1mImage Load (0.0ms)[0m   [0;1mSELECT * FROM `assets` WHERE (`assets`.viewable_id = 109241137 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) ) ORDER BY position LIMIT 1[0m
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM `product_stores` WHERE (`product_stores`.product_id = 109241137)[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `assets` WHERE (`assets`.viewable_id = 827682565 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) )[0m
+  [4;35;1mImage Load (0.0ms)[0m   [0mSELECT * FROM `assets` WHERE (`assets`.viewable_id = 827682565 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) ) ORDER BY position LIMIT 1[0m
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `product_stores` WHERE (`product_stores`.product_id = 827682565)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+Rendered shared/_products (128.0ms)
+Rendered taxons/_taxon (147.0ms)
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendered shared/_login_bar (34.0ms)
+Rendered shared/_store_menu (2.0ms)
+  [4;36;1mTaxon Load (0.0ms)[0m   [0;1mSELECT * FROM `taxons` WHERE (`taxons`.`id` = 1001)[0m
+  [4;35;1mTaxon Load (1.0ms)[0m   [0mSELECT * FROM `taxons` WHERE (`taxons`.`id` = 1000)[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_language_bar (6.0ms)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_footer (17.0ms)
+Completed in 773ms (View: 419, DB: 63) | 200 OK [http://localhost/t/Categories/Clothing/Shirts/]
+  [4;36;1mOrder Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `orders`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2009-08-17 20:17:40) [GET]
+  Parameters: {"action"=>"show", "id"=>"ruby-on-rails-baseball-jersey", "controller"=>"products", "taxon_path"=>["categories", "clothing", "shirts", "t-shirts"]}
+  [4;36;1mTaxonomy Load (1.0ms)[0m   [0;1mSELECT * FROM `taxonomies`[0m
+  [4;35;1mTaxonomy Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `taxonomies`[0m
+  [4;36;1mTaxon Load (1.0ms)[0m   [0;1mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.taxonomy_id IN (276849385,402847427) AND (parent_id is null))[0m
+  [4;35;1mTaxon Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `taxons`[0m
+  [4;36;1mTaxon Load (0.0ms)[0m   [0;1mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.parent_id IN (1000,20000)) ORDER BY position[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mAppConfiguration Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `configurations`[0m
+  [4;35;1mAppConfiguration Load (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mRole Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mUser Load IDs For Limited Eager Loading (0.0ms)[0m   [0;1mSELECT DISTINCT `users`.id FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') LIMIT 1[0m
+  [4;35;1mUser Load Including Associations (1.0ms)[0m   [0mSELECT `users`.`id` AS t0_r0, `users`.`email` AS t0_r1, `users`.`crypted_password` AS t0_r2, `users`.`salt` AS t0_r3, `users`.`remember_token` AS t0_r4, `users`.`remember_token_expires_at` AS t0_r5, `users`.`created_at` AS t0_r6, `users`.`updated_at` AS t0_r7, `users`.`persistence_token` AS t0_r8, `users`.`single_access_token` AS t0_r9, `users`.`perishable_token` AS t0_r10, `users`.`login_count` AS t0_r11, `users`.`failed_login_count` AS t0_r12, `users`.`last_request_at` AS t0_r13, `users`.`current_login_at` AS t0_r14, `users`.`last_login_at` AS t0_r15, `users`.`current_login_ip` AS t0_r16, `users`.`last_login_ip` AS t0_r17, `users`.`login` AS t0_r18, `roles`.`id` AS t1_r0, `roles`.`name` AS t1_r1 FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') AND `users`.id IN (131329753)[0m
+  [4;36;1mTaxon Load (1.0ms)[0m   [0;1mSELECT * FROM `taxons` WHERE (`taxons`.`permalink` = 'categories/clothing/shirts/t-shirts/') LIMIT 1[0m
+  [4;35;1mProduct Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`permalink` = 'ruby-on-rails-baseball-jersey') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering products/show
+  [4;35;1mImage Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `assets`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `assets` WHERE (`assets`.viewable_id = 518820413 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) )[0m
+  [4;35;1mImage Load (0.0ms)[0m   [0mSELECT * FROM `assets` WHERE (`assets`.viewable_id = 518820413 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) ) ORDER BY position LIMIT 1[0m
+[paperclip] Paperclip attachment attachment on Image initialized.
+Rendered products/_image (29.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `assets` WHERE (`assets`.viewable_id = 518820413 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) )[0m
+  [4;35;1mImage Load (1.0ms)[0m   [0mSELECT * FROM `assets` WHERE (`assets`.viewable_id = 518820413 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) ) ORDER BY position[0m
+[paperclip] Paperclip attachment attachment on Image initialized.
+[paperclip] Paperclip attachment attachment on Image initialized.
+Rendered products/_thumbnails (10.0ms)
+  [4;36;1mProductProperty Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `product_properties`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `product_properties` WHERE (`product_properties`.product_id = 518820413)[0m
+  [4;36;1mProductProperty Load (0.0ms)[0m   [0;1mSELECT * FROM `product_properties` WHERE (`product_properties`.product_id = 518820413)[0m
+  [4;35;1mProperty Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `properties`[0m
+  [4;36;1mProperty Load (0.0ms)[0m   [0;1mSELECT * FROM `properties` WHERE (`properties`.`id` = 147344878)[0m
+  [4;35;1mProperty Load (1.0ms)[0m   [0mSELECT * FROM `properties` WHERE (`properties`.`id` = 323421233)[0m
+  [4;36;1mProperty Load (0.0ms)[0m   [0;1mSELECT * FROM `properties` WHERE (`properties`.`id` = 501711371)[0m
+  [4;35;1mProperty Load (0.0ms)[0m   [0mSELECT * FROM `properties` WHERE (`properties`.`id` = 878162561)[0m
+  [4;36;1mProperty Load (0.0ms)[0m   [0;1mSELECT * FROM `properties` WHERE (`properties`.`id` = 310488352)[0m
+  [4;35;1mProperty Load (0.0ms)[0m   [0mSELECT * FROM `properties` WHERE (`properties`.`id` = 673563812)[0m
+  [4;36;1mProperty Load (0.0ms)[0m   [0;1mSELECT * FROM `properties` WHERE (`properties`.`id` = 13838271)[0m
+  [4;35;1mProperty Load (0.0ms)[0m   [0mSELECT * FROM `properties` WHERE (`properties`.`id` = 589292198)[0m
+Rendered products/_properties (53.0ms)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mTaxConfiguration Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `configurations`[0m
+  [4;36;1mTaxConfiguration Load (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mVariant Load (0.0ms)[0m   [0mSELECT * FROM `variants` WHERE (`variants`.product_id = 518820413)[0m
+  [4;36;1mVariant Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `variants`[0m
+  [4;35;1moption_values_variants Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `option_values_variants`[0m
+  [4;36;1mOptionValue Load (1.0ms)[0m   [0;1mSELECT * FROM `option_values` INNER JOIN `option_values_variants` ON `option_values`.id = `option_values_variants`.option_value_id WHERE (`option_values_variants`.variant_id = 13164603 )[0m
+  [4;35;1mVariant Load (0.0ms)[0m   [0mSELECT * FROM `variants` WHERE (`variants`.product_id = 518820413) AND ((deleted_at is null) AND (`variants`.product_id = 518820413))[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `option_values` INNER JOIN `option_values_variants` ON `option_values`.id = `option_values_variants`.option_value_id WHERE (`option_values_variants`.variant_id = 13164603 )[0m
+  [4;35;1mInventoryUnit Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `inventory_units`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `inventory_units` WHERE (((`inventory_units`.`state` IN ('on_hand')) AND (`inventory_units`.variant_id = 13164603)) AND (`inventory_units`.variant_id = 13164603))[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `inventory_units` WHERE (((`inventory_units`.`state` IN ('on_hand')) AND (`inventory_units`.variant_id = 13164603)) AND (`inventory_units`.variant_id = 13164603))[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `inventory_units` WHERE (((`inventory_units`.`state` IN ('on_hand')) AND (`inventory_units`.variant_id = 13164603)) AND (`inventory_units`.variant_id = 13164603))[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mOptionValue Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `option_values`[0m
+  [4;36;1mOptionType Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `option_types`[0m
+  [4;35;1mOptionType Load (1.0ms)[0m   [0mSELECT * FROM `option_types` WHERE (`option_types`.`id` = 462696994)[0m
+  [4;36;1mOptionType Load (0.0ms)[0m   [0;1mSELECT * FROM `option_types` WHERE (`option_types`.`id` = 598654358)[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `inventory_units` WHERE (((`inventory_units`.`state` IN ('on_hand')) AND (`inventory_units`.variant_id = 13164603)) AND (`inventory_units`.variant_id = 13164603))[0m
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 518820413)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mOptionValue Load (1.0ms)[0m   [0mSELECT * FROM `option_values` INNER JOIN `option_values_variants` ON `option_values`.id = `option_values_variants`.option_value_id WHERE (`option_values_variants`.variant_id = 35540632 )[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `inventory_units` WHERE (((`inventory_units`.`state` IN ('on_hand')) AND (`inventory_units`.variant_id = 35540632)) AND (`inventory_units`.variant_id = 35540632))[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `inventory_units` WHERE (((`inventory_units`.`state` IN ('on_hand')) AND (`inventory_units`.variant_id = 35540632)) AND (`inventory_units`.variant_id = 35540632))[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `option_types` WHERE (`option_types`.`id` = 462696994)[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `option_types` WHERE (`option_types`.`id` = 598654358)[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `inventory_units` WHERE (((`inventory_units`.`state` IN ('on_hand')) AND (`inventory_units`.variant_id = 35540632)) AND (`inventory_units`.variant_id = 35540632))[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 518820413)[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mOptionValue Load (1.0ms)[0m   [0;1mSELECT * FROM `option_values` INNER JOIN `option_values_variants` ON `option_values`.id = `option_values_variants`.option_value_id WHERE (`option_values_variants`.variant_id = 239708706 )[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM `inventory_units` WHERE (((`inventory_units`.`state` IN ('on_hand')) AND (`inventory_units`.variant_id = 239708706)) AND (`inventory_units`.variant_id = 239708706))[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `inventory_units` WHERE (((`inventory_units`.`state` IN ('on_hand')) AND (`inventory_units`.variant_id = 239708706)) AND (`inventory_units`.variant_id = 239708706))[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `option_types` WHERE (`option_types`.`id` = 462696994)[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `option_types` WHERE (`option_types`.`id` = 598654358)[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `inventory_units` WHERE (((`inventory_units`.`state` IN ('on_hand')) AND (`inventory_units`.variant_id = 239708706)) AND (`inventory_units`.variant_id = 239708706))[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 518820413)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mOptionValue Load (0.0ms)[0m   [0mSELECT * FROM `option_values` INNER JOIN `option_values_variants` ON `option_values`.id = `option_values_variants`.option_value_id WHERE (`option_values_variants`.variant_id = 254737787 )[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `inventory_units` WHERE (((`inventory_units`.`state` IN ('on_hand')) AND (`inventory_units`.variant_id = 254737787)) AND (`inventory_units`.variant_id = 254737787))[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `inventory_units` WHERE (((`inventory_units`.`state` IN ('on_hand')) AND (`inventory_units`.variant_id = 254737787)) AND (`inventory_units`.variant_id = 254737787))[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `option_types` WHERE (`option_types`.`id` = 462696994)[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `option_types` WHERE (`option_types`.`id` = 598654358)[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `inventory_units` WHERE (((`inventory_units`.`state` IN ('on_hand')) AND (`inventory_units`.variant_id = 254737787)) AND (`inventory_units`.variant_id = 254737787))[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 518820413)[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mOptionValue Load (0.0ms)[0m   [0;1mSELECT * FROM `option_values` INNER JOIN `option_values_variants` ON `option_values`.id = `option_values_variants`.option_value_id WHERE (`option_values_variants`.variant_id = 306868287 )[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM `inventory_units` WHERE (((`inventory_units`.`state` IN ('on_hand')) AND (`inventory_units`.variant_id = 306868287)) AND (`inventory_units`.variant_id = 306868287))[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `inventory_units` WHERE (((`inventory_units`.`state` IN ('on_hand')) AND (`inventory_units`.variant_id = 306868287)) AND (`inventory_units`.variant_id = 306868287))[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `option_types` WHERE (`option_types`.`id` = 462696994)[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `option_types` WHERE (`option_types`.`id` = 598654358)[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `inventory_units` WHERE (((`inventory_units`.`state` IN ('on_hand')) AND (`inventory_units`.variant_id = 306868287)) AND (`inventory_units`.variant_id = 306868287))[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 518820413)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mOptionValue Load (1.0ms)[0m   [0mSELECT * FROM `option_values` INNER JOIN `option_values_variants` ON `option_values`.id = `option_values_variants`.option_value_id WHERE (`option_values_variants`.variant_id = 475213530 )[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `inventory_units` WHERE (((`inventory_units`.`state` IN ('on_hand')) AND (`inventory_units`.variant_id = 475213530)) AND (`inventory_units`.variant_id = 475213530))[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `inventory_units` WHERE (((`inventory_units`.`state` IN ('on_hand')) AND (`inventory_units`.variant_id = 475213530)) AND (`inventory_units`.variant_id = 475213530))[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `option_types` WHERE (`option_types`.`id` = 462696994)[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `option_types` WHERE (`option_types`.`id` = 598654358)[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `inventory_units` WHERE (((`inventory_units`.`state` IN ('on_hand')) AND (`inventory_units`.variant_id = 475213530)) AND (`inventory_units`.variant_id = 475213530))[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 518820413)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mOptionValue Load (0.0ms)[0m   [0;1mSELECT * FROM `option_values` INNER JOIN `option_values_variants` ON `option_values`.id = `option_values_variants`.option_value_id WHERE (`option_values_variants`.variant_id = 505435016 )[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM `inventory_units` WHERE (((`inventory_units`.`state` IN ('on_hand')) AND (`inventory_units`.variant_id = 505435016)) AND (`inventory_units`.variant_id = 505435016))[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `inventory_units` WHERE (((`inventory_units`.`state` IN ('on_hand')) AND (`inventory_units`.variant_id = 505435016)) AND (`inventory_units`.variant_id = 505435016))[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `option_types` WHERE (`option_types`.`id` = 462696994)[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `option_types` WHERE (`option_types`.`id` = 598654358)[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `inventory_units` WHERE (((`inventory_units`.`state` IN ('on_hand')) AND (`inventory_units`.variant_id = 505435016)) AND (`inventory_units`.variant_id = 505435016))[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 518820413)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mOptionValue Load (0.0ms)[0m   [0mSELECT * FROM `option_values` INNER JOIN `option_values_variants` ON `option_values`.id = `option_values_variants`.option_value_id WHERE (`option_values_variants`.variant_id = 540743033 )[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `inventory_units` WHERE (((`inventory_units`.`state` IN ('on_hand')) AND (`inventory_units`.variant_id = 540743033)) AND (`inventory_units`.variant_id = 540743033))[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `inventory_units` WHERE (((`inventory_units`.`state` IN ('on_hand')) AND (`inventory_units`.variant_id = 540743033)) AND (`inventory_units`.variant_id = 540743033))[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `option_types` WHERE (`option_types`.`id` = 462696994)[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `option_types` WHERE (`option_types`.`id` = 598654358)[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `inventory_units` WHERE (((`inventory_units`.`state` IN ('on_hand')) AND (`inventory_units`.variant_id = 540743033)) AND (`inventory_units`.variant_id = 540743033))[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 518820413)[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mOptionValue Load (1.0ms)[0m   [0;1mSELECT * FROM `option_values` INNER JOIN `option_values_variants` ON `option_values`.id = `option_values_variants`.option_value_id WHERE (`option_values_variants`.variant_id = 792722882 )[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM `inventory_units` WHERE (((`inventory_units`.`state` IN ('on_hand')) AND (`inventory_units`.variant_id = 792722882)) AND (`inventory_units`.variant_id = 792722882))[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `inventory_units` WHERE (((`inventory_units`.`state` IN ('on_hand')) AND (`inventory_units`.variant_id = 792722882)) AND (`inventory_units`.variant_id = 792722882))[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `option_types` WHERE (`option_types`.`id` = 462696994)[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `option_types` WHERE (`option_types`.`id` = 598654358)[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `inventory_units` WHERE (((`inventory_units`.`state` IN ('on_hand')) AND (`inventory_units`.variant_id = 792722882)) AND (`inventory_units`.variant_id = 792722882))[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 518820413)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mOptionValue Load (1.0ms)[0m   [0mSELECT * FROM `option_values` INNER JOIN `option_values_variants` ON `option_values`.id = `option_values_variants`.option_value_id WHERE (`option_values_variants`.variant_id = 980615689 )[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `inventory_units` WHERE (((`inventory_units`.`state` IN ('on_hand')) AND (`inventory_units`.variant_id = 980615689)) AND (`inventory_units`.variant_id = 980615689))[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `inventory_units` WHERE (((`inventory_units`.`state` IN ('on_hand')) AND (`inventory_units`.variant_id = 980615689)) AND (`inventory_units`.variant_id = 980615689))[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `option_types` WHERE (`option_types`.`id` = 462696994)[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `option_types` WHERE (`option_types`.`id` = 598654358)[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `inventory_units` WHERE (((`inventory_units`.`state` IN ('on_hand')) AND (`inventory_units`.variant_id = 980615689)) AND (`inventory_units`.variant_id = 980615689))[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 518820413)[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `inventory_units` WHERE (((`inventory_units`.`state` IN ('on_hand')) AND (`inventory_units`.variant_id = 13164603)) AND (`inventory_units`.variant_id = 13164603))[0m
+Rendered products/_cart_form (508.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`permalink` = 'ruby-on-rails-baseball-jersey') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`permalink` = 'ruby-on-rails-baseball-jersey') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`permalink` = 'ruby-on-rails-baseball-jersey') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`permalink` = 'ruby-on-rails-baseball-jersey') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`permalink` = 'ruby-on-rails-baseball-jersey') LIMIT 1[0m
+Rendered shared/_login_bar (15.0ms)
+Rendered shared/_store_menu (2.0ms)
+  [4;36;1mTaxon Load (1.0ms)[0m   [0;1mSELECT * FROM `taxons` WHERE (`taxons`.`id` = 2000)[0m
+  [4;35;1mTaxon Load (0.0ms)[0m   [0mSELECT * FROM `taxons` WHERE (`taxons`.`id` = 1001)[0m
+  [4;36;1mTaxon Load (0.0ms)[0m   [0;1mSELECT * FROM `taxons` WHERE (`taxons`.`id` = 1000)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_language_bar (6.0ms)
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_footer (17.0ms)
+Completed in 1328ms (View: 696, DB: 121) | 200 OK [http://localhost/t/categories/clothing/shirts/t-shirts/p/ruby-on-rails-baseball-jersey]
+  [4;35;1mOrder Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#test (for 127.0.0.1 at 2009-08-17 20:17:49) [GET]
+  Parameters: {"action"=>"test", "controller"=>"searches"}
+  [4;35;1mTaxonomy Load (1.0ms)[0m   [0mSELECT * FROM `taxonomies`[0m
+  [4;36;1mTaxonomy Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `taxonomies`[0m
+  [4;35;1mTaxon Load (0.0ms)[0m   [0mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.taxonomy_id IN (276849385,402847427) AND (parent_id is null))[0m
+  [4;36;1mTaxon Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `taxons`[0m
+  [4;35;1mTaxon Load (1.0ms)[0m   [0mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.parent_id IN (1000,20000)) ORDER BY position[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mAppConfiguration Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `configurations`[0m
+  [4;36;1mAppConfiguration Load (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendering template within layouts/application
+Rendering searches/test
+Rendered shared/_search_box (3.0ms)
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendered shared/_login_bar (33.0ms)
+Rendered shared/_store_menu (1.0ms)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_language_bar (6.0ms)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_footer (114.0ms)
+Completed in 555ms (View: 298, DB: 19) | 200 OK [http://localhost/search/test]
+  [4;36;1mOrder Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `orders`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-08-17 20:17:54) [GET]
+  Parameters: {"action"=>"index", "controller"=>"products", "keywords"=>"Apache"}
+  [4;36;1mTaxonomy Load (0.0ms)[0m   [0;1mSELECT * FROM `taxonomies`[0m
+  [4;35;1mTaxonomy Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `taxonomies`[0m
+  [4;36;1mTaxon Load (0.0ms)[0m   [0;1mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.taxonomy_id IN (276849385,402847427) AND (parent_id is null))[0m
+  [4;35;1mTaxon Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `taxons`[0m
+  [4;36;1mTaxon Load (0.0ms)[0m   [0;1mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.parent_id IN (1000,20000)) ORDER BY position[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mAppConfiguration Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `configurations`[0m
+  [4;35;1mAppConfiguration Load (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mRole Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mUser Load IDs For Limited Eager Loading (0.0ms)[0m   [0;1mSELECT DISTINCT `users`.id FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') LIMIT 1[0m
+  [4;35;1mUser Load Including Associations (0.0ms)[0m   [0mSELECT `users`.`id` AS t0_r0, `users`.`email` AS t0_r1, `users`.`crypted_password` AS t0_r2, `users`.`salt` AS t0_r3, `users`.`remember_token` AS t0_r4, `users`.`remember_token_expires_at` AS t0_r5, `users`.`created_at` AS t0_r6, `users`.`updated_at` AS t0_r7, `users`.`persistence_token` AS t0_r8, `users`.`single_access_token` AS t0_r9, `users`.`perishable_token` AS t0_r10, `users`.`login_count` AS t0_r11, `users`.`failed_login_count` AS t0_r12, `users`.`last_request_at` AS t0_r13, `users`.`current_login_at` AS t0_r14, `users`.`last_login_at` AS t0_r15, `users`.`current_login_ip` AS t0_r16, `users`.`last_login_ip` AS t0_r17, `users`.`login` AS t0_r18, `roles`.`id` AS t1_r0, `roles`.`name` AS t1_r1 FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') AND `users`.id IN (131329753)[0m
+  [4;36;1mProduct Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`name` LIKE '%Apache%') AND (products.available_on <= '2009-08-17 14:47:55' and products.deleted_at is null) ORDER BY `products`.`available_on` DESC LIMIT 10[0m
+  [4;36;1mImage Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (1.0ms)[0m   [0mSELECT `assets`.* FROM `assets` WHERE (`assets`.`viewable_id` = 109241137 and `assets`.`viewable_type` = 'Product') AND ( (`assets`.`type` = 'Image' ) ) ORDER BY position[0m
+Rendering template within layouts/application
+Rendering products/index
+  [4;36;1mTaxon Load (0.0ms)[0m   [0;1mSELECT * FROM `taxons` WHERE (parent_id = 1001)[0m
+  [4;35;1mTaxon Load (0.0ms)[0m   [0mSELECT * FROM `taxons` WHERE (parent_id = 1002)[0m
+  [4;36;1mTaxon Load (0.0ms)[0m   [0;1mSELECT * FROM `taxons` WHERE (parent_id = 1003)[0m
+Rendered shared/_taxonomies_all (6.0ms)
+Rendered shared/_login_bar (15.0ms)
+Rendered shared/_store_menu (1.0ms)
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_language_bar (6.0ms)
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_footer (17.0ms)
+Completed in 637ms (View: 165, DB: 27) | 200 OK [http://localhost/products?keywords=Apache]
+  [4;35;1mOrder Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TaxonsController#show (for 127.0.0.1 at 2009-08-17 20:17:58) [GET]
+  Parameters: {"action"=>"show", "id"=>["Categories", "Clothing", "Shirts"], "controller"=>"taxons"}
+  [4;35;1mTaxonomy Load (0.0ms)[0m   [0mSELECT * FROM `taxonomies`[0m
+  [4;36;1mTaxonomy Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `taxonomies`[0m
+  [4;35;1mTaxon Load (0.0ms)[0m   [0mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.taxonomy_id IN (276849385,402847427) AND (parent_id is null))[0m
+  [4;36;1mTaxon Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `taxons`[0m
+  [4;35;1mTaxon Load (1.0ms)[0m   [0mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.parent_id IN (1000,20000)) ORDER BY position[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mAppConfiguration Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `configurations`[0m
+  [4;36;1mAppConfiguration Load (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mTaxon Load (0.0ms)[0m   [0mSELECT * FROM `taxons` WHERE (`taxons`.`permalink` = 'Categories/Clothing/Shirts/') LIMIT 1[0m
+  [4;36;1mProduct Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mProduct Load (15.0ms)[0m   [0mSELECT `products`.* FROM `products` INNER JOIN `products_taxons` ON `products`.id = `products_taxons`.product_id WHERE (((products.available_on <= '2009-08-17 14:47:58' and products.deleted_at is null) AND (`products_taxons`.taxon_id = 2000 )) AND (`products_taxons`.taxon_id = 2000 )) ORDER BY `products`.`available_on` DESC LIMIT 10[0m
+  [4;36;1mImage Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (2.0ms)[0m   [0mSELECT `assets`.* FROM `assets` WHERE (`assets`.`viewable_id` = 672404575 and `assets`.`viewable_type` = 'Product') AND ( (`assets`.`type` = 'Image' ) ) ORDER BY position[0m
+Rendering template within layouts/application
+Rendering taxons/show
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `taxons` WHERE (`taxons`.parent_id = 2000)[0m
+  [4;35;1mTaxon Load (1.0ms)[0m   [0mSELECT * FROM `taxons` WHERE (`taxons`.parent_id = 2000) ORDER BY position[0m
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT `products`.* FROM `products` INNER JOIN `products_taxons` ON `products`.id = `products_taxons`.product_id WHERE (((products.available_on <= '2009-08-17 14:47:59' and products.deleted_at is null) AND (`products_taxons`.taxon_id = 3000 )) AND (`products_taxons`.taxon_id = 3000 )) LIMIT 25[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mTaxon Load (0.0ms)[0m   [0mSELECT * FROM `taxons` WHERE (`taxons`.parent_id = 3000) ORDER BY position[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `assets` WHERE (`assets`.viewable_id = 518820413 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) )[0m
+  [4;35;1mImage Load (0.0ms)[0m   [0mSELECT * FROM `assets` WHERE (`assets`.viewable_id = 518820413 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) ) ORDER BY position LIMIT 1[0m
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;36;1mProductStore Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `product_stores`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `product_stores` WHERE (`product_stores`.product_id = 518820413)[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mTaxConfiguration Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `configurations`[0m
+  [4;36;1mTaxConfiguration Load (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `assets` WHERE (`assets`.viewable_id = 25673712 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) )[0m
+  [4;36;1mImage Load (0.0ms)[0m   [0;1mSELECT * FROM `assets` WHERE (`assets`.viewable_id = 25673712 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) ) ORDER BY position LIMIT 1[0m
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `product_stores` WHERE (`product_stores`.product_id = 25673712)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `assets` WHERE (`assets`.viewable_id = 109241137 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) )[0m
+  [4;35;1mImage Load (0.0ms)[0m   [0mSELECT * FROM `assets` WHERE (`assets`.viewable_id = 109241137 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) ) ORDER BY position LIMIT 1[0m
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `product_stores` WHERE (`product_stores`.product_id = 109241137)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `assets` WHERE (`assets`.viewable_id = 827682565 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) )[0m
+  [4;36;1mImage Load (1.0ms)[0m   [0;1mSELECT * FROM `assets` WHERE (`assets`.viewable_id = 827682565 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) ) ORDER BY position LIMIT 1[0m
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `product_stores` WHERE (`product_stores`.product_id = 827682565)[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+Rendered shared/_products (200.0ms)
+Rendered taxons/_taxon (213.0ms)
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendered shared/_login_bar (33.0ms)
+Rendered shared/_store_menu (1.0ms)
+  [4;35;1mTaxon Load (0.0ms)[0m   [0mSELECT * FROM `taxons` WHERE (`taxons`.`id` = 1001)[0m
+  [4;36;1mTaxon Load (0.0ms)[0m   [0;1mSELECT * FROM `taxons` WHERE (`taxons`.`id` = 1000)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_language_bar (7.0ms)
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_footer (17.0ms)
+Completed in 750ms (View: 393, DB: 66) | 200 OK [http://localhost/t/Categories/Clothing/Shirts/]
+  [4;35;1mOrder Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#new (for 127.0.0.1 at 2009-08-17 20:18:09) [GET]
+  Parameters: {"action"=>"new", "controller"=>"searches"}
+  [4;35;1mTaxonomy Load (1.0ms)[0m   [0mSELECT * FROM `taxonomies`[0m
+  [4;36;1mTaxonomy Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `taxonomies`[0m
+  [4;35;1mTaxon Load (1.0ms)[0m   [0mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.taxonomy_id IN (276849385,402847427) AND (parent_id is null))[0m
+  [4;36;1mTaxon Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `taxons`[0m
+  [4;35;1mTaxon Load (0.0ms)[0m   [0mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.parent_id IN (1000,20000)) ORDER BY position[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mAppConfiguration Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `configurations`[0m
+  [4;36;1mAppConfiguration Load (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendering template within layouts/application
+Rendering searches/new
+Rendered shared/_taxonomies (3.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `taxonomies`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.taxonomy_id IN (276849385,402847427) AND (parent_id is null))[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.parent_id IN (1000,20000)) ORDER BY position[0m
+  [4;36;1mTaxon Load (0.0ms)[0m   [0;1mSELECT * FROM `taxons` WHERE (`taxons`.parent_id = 1001) ORDER BY position[0m
+  [4;35;1mTaxon Load (0.0ms)[0m   [0mSELECT * FROM `taxons` WHERE (`taxons`.parent_id = 2000) ORDER BY position[0m
+  [4;36;1mTaxon Load (0.0ms)[0m   [0;1mSELECT * FROM `taxons` WHERE (`taxons`.parent_id = 3000) ORDER BY position[0m
+  [4;35;1mTaxon Load (0.0ms)[0m   [0mSELECT * FROM `taxons` WHERE (`taxons`.parent_id = 1002) ORDER BY position[0m
+  [4;36;1mTaxon Load (1.0ms)[0m   [0;1mSELECT * FROM `taxons` WHERE (`taxons`.parent_id = 1003) ORDER BY position[0m
+  [4;35;1mTaxon Load (0.0ms)[0m   [0mSELECT * FROM `taxons` WHERE (`taxons`.parent_id = 241670986) ORDER BY position[0m
+  [4;36;1mTaxon Load (1.0ms)[0m   [0;1mSELECT * FROM `taxons` WHERE (`taxons`.parent_id = 354131119) ORDER BY position[0m
+  [4;35;1mTaxon Load (0.0ms)[0m   [0mSELECT * FROM `taxons` WHERE (`taxons`.parent_id = 268740766) ORDER BY position[0m
+  [4;36;1mUser Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendered shared/_login_bar (33.0ms)
+Rendered shared/_store_menu (1.0ms)
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_language_bar (7.0ms)
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_footer (17.0ms)
+Completed in 542ms (View: 376, DB: 21) | 200 OK [http://localhost/searches/new]
+  [4;35;1mOrder Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#create (for 127.0.0.1 at 2009-08-17 20:18:15) [POST]
+  Parameters: {"search"=>{"taxon_id"=>"", "max_price"=>"", "subtaxons"=>"0", "min_price"=>"", "keywords"=>"apache"}, "commit"=>"Send", "action"=>"create", "authenticity_token"=>"YdmRET0xsd0xtt/wQ98qFdI6LvPfcqOe8LzGoKLwOs8=", "controller"=>"searches"}
+  [4;35;1mTaxonomy Load (1.0ms)[0m   [0mSELECT * FROM `taxonomies`[0m
+  [4;36;1mTaxonomy Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `taxonomies`[0m
+  [4;35;1mTaxon Load (0.0ms)[0m   [0mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.taxonomy_id IN (276849385,402847427) AND (parent_id is null))[0m
+  [4;36;1mTaxon Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `taxons`[0m
+  [4;35;1mTaxon Load (0.0ms)[0m   [0mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.parent_id IN (1000,20000)) ORDER BY position[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mAppConfiguration Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `configurations`[0m
+  [4;36;1mAppConfiguration Load (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Redirected to http://localhost:3000/searches/show?keywords=apache
+Completed in 162ms (DB: 11) | 302 Found [http://localhost/searches]
+  [4;35;1mOrder Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2009-08-17 20:18:16) [GET]
+  Parameters: {"action"=>"show", "id"=>"show", "controller"=>"searches", "keywords"=>"apache"}
+  [4;35;1mTaxonomy Load (1.0ms)[0m   [0mSELECT * FROM `taxonomies`[0m
+  [4;36;1mTaxonomy Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `taxonomies`[0m
+  [4;35;1mTaxon Load (1.0ms)[0m   [0mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.taxonomy_id IN (276849385,402847427) AND (parent_id is null))[0m
+  [4;36;1mTaxon Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `taxons`[0m
+  [4;35;1mTaxon Load (1.0ms)[0m   [0mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.parent_id IN (1000,20000)) ORDER BY position[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mAppConfiguration Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `configurations`[0m
+  [4;36;1mAppConfiguration Load (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mProduct Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`name` LIKE '%apache%') AND (products.available_on <= '2009-08-17 14:48:17' and products.deleted_at is null) ORDER BY `products`.`available_on` DESC LIMIT 10[0m
+  [4;35;1mImage Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `assets`[0m
+  [4;36;1mImage Load (1.0ms)[0m   [0;1mSELECT `assets`.* FROM `assets` WHERE (`assets`.`viewable_id` = 109241137 and `assets`.`viewable_type` = 'Product') AND ( (`assets`.`type` = 'Image' ) ) ORDER BY position[0m
+Rendering template within layouts/application
+Rendering searches/show
+Rendered shared/_taxonomies (4.0ms)
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mTaxConfiguration Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `configurations`[0m
+  [4;35;1mTaxConfiguration Load (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+Rendered shared/_products (43.0ms)
+Rendered shared/_sort_bar (7.0ms)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(`products`.id) AS count_id FROM `products` WHERE (`products`.`name` LIKE '%apache%') AND (products.available_on <= '2009-08-17 14:48:17' and products.deleted_at is null)[0m
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendered shared/_login_bar (36.0ms)
+Rendered shared/_store_menu (2.0ms)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_language_bar (7.0ms)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_footer (20.0ms)
+Completed in 859ms (View: 426, DB: 44) | 200 OK [http://localhost/searches/show?keywords=apache]
+  [4;36;1mOrder Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `orders`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2009-08-17 20:18:21) [GET]
+  Parameters: {"action"=>"show", "id"=>"apache-baseball-jersey", "controller"=>"products"}
+  [4;36;1mTaxonomy Load (0.0ms)[0m   [0;1mSELECT * FROM `taxonomies`[0m
+  [4;35;1mTaxonomy Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `taxonomies`[0m
+  [4;36;1mTaxon Load (0.0ms)[0m   [0;1mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.taxonomy_id IN (276849385,402847427) AND (parent_id is null))[0m
+  [4;35;1mTaxon Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `taxons`[0m
+  [4;36;1mTaxon Load (1.0ms)[0m   [0;1mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.parent_id IN (1000,20000)) ORDER BY position[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mAppConfiguration Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `configurations`[0m
+  [4;35;1mAppConfiguration Load (1.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mRole Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mUser Load IDs For Limited Eager Loading (1.0ms)[0m   [0;1mSELECT DISTINCT `users`.id FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') LIMIT 1[0m
+  [4;35;1mUser Load Including Associations (0.0ms)[0m   [0mSELECT `users`.`id` AS t0_r0, `users`.`email` AS t0_r1, `users`.`crypted_password` AS t0_r2, `users`.`salt` AS t0_r3, `users`.`remember_token` AS t0_r4, `users`.`remember_token_expires_at` AS t0_r5, `users`.`created_at` AS t0_r6, `users`.`updated_at` AS t0_r7, `users`.`persistence_token` AS t0_r8, `users`.`single_access_token` AS t0_r9, `users`.`perishable_token` AS t0_r10, `users`.`login_count` AS t0_r11, `users`.`failed_login_count` AS t0_r12, `users`.`last_request_at` AS t0_r13, `users`.`current_login_at` AS t0_r14, `users`.`last_login_at` AS t0_r15, `users`.`current_login_ip` AS t0_r16, `users`.`last_login_ip` AS t0_r17, `users`.`login` AS t0_r18, `roles`.`id` AS t1_r0, `roles`.`name` AS t1_r1 FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') AND `users`.id IN (131329753)[0m
+  [4;36;1mProduct Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`permalink` = 'apache-baseball-jersey') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering products/show
+  [4;36;1mImage Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `assets` WHERE (`assets`.viewable_id = 109241137 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) )[0m
+  [4;36;1mImage Load (0.0ms)[0m   [0;1mSELECT * FROM `assets` WHERE (`assets`.viewable_id = 109241137 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) ) ORDER BY position LIMIT 1[0m
+[paperclip] Paperclip attachment attachment on Image initialized.
+Rendered products/_image (125.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `assets` WHERE (`assets`.viewable_id = 109241137 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) )[0m
+Rendered products/_thumbnails (4.0ms)
+  [4;36;1mProductProperty Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `product_properties`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM `product_properties` WHERE (`product_properties`.product_id = 109241137)[0m
+Rendered products/_properties (24.0ms)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mTaxConfiguration Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `configurations`[0m
+  [4;36;1mTaxConfiguration Load (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mVariant Load (1.0ms)[0m   [0mSELECT * FROM `variants` WHERE (`variants`.product_id = 109241137)[0m
+  [4;36;1mVariant Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `variants`[0m
+  [4;35;1moption_values_variants Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `option_values_variants`[0m
+  [4;36;1mOptionValue Load (0.0ms)[0m   [0;1mSELECT * FROM `option_values` INNER JOIN `option_values_variants` ON `option_values`.id = `option_values_variants`.option_value_id WHERE (`option_values_variants`.variant_id = 468980334 )[0m
+  [4;35;1mInventoryUnit Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `inventory_units`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `inventory_units` WHERE (((`inventory_units`.`state` IN ('on_hand')) AND (`inventory_units`.variant_id = 468980334)) AND (`inventory_units`.variant_id = 468980334))[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered products/_cart_form (115.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`permalink` = 'apache-baseball-jersey') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`permalink` = 'apache-baseball-jersey') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`permalink` = 'apache-baseball-jersey') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`permalink` = 'apache-baseball-jersey') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`permalink` = 'apache-baseball-jersey') LIMIT 1[0m
+Rendered shared/_login_bar (16.0ms)
+Rendered shared/_store_menu (1.0ms)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_language_bar (7.0ms)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_footer (125.0ms)
+Completed in 889ms (View: 435, DB: 51) | 200 OK [http://localhost/products/apache-baseball-jersey]
+  [4;36;1mOrder Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `orders`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#create (for 127.0.0.1 at 2009-08-17 20:18:37) [POST]
+  Parameters: {"search"=>{"taxon_id"=>"", "max_price"=>"15", "subtaxons"=>"0", "min_price"=>"10", "keywords"=>"ruby"}, "commit"=>"Send", "action"=>"create", "authenticity_token"=>"YdmRET0xsd0xtt/wQ98qFdI6LvPfcqOe8LzGoKLwOs8=", "controller"=>"searches"}
+  [4;36;1mTaxonomy Load (0.0ms)[0m   [0;1mSELECT * FROM `taxonomies`[0m
+  [4;35;1mTaxonomy Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `taxonomies`[0m
+  [4;36;1mTaxon Load (0.0ms)[0m   [0;1mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.taxonomy_id IN (276849385,402847427) AND (parent_id is null))[0m
+  [4;35;1mTaxon Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `taxons`[0m
+  [4;36;1mTaxon Load (1.0ms)[0m   [0;1mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.parent_id IN (1000,20000)) ORDER BY position[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mAppConfiguration Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `configurations`[0m
+  [4;35;1mAppConfiguration Load (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Redirected to http://localhost:3000/searches/show?keywords=ruby&max_price=15&min_price=10
+Completed in 252ms (DB: 10) | 302 Found [http://localhost/searches]
+  [4;36;1mOrder Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `orders`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2009-08-17 20:18:39) [GET]
+  Parameters: {"action"=>"show", "id"=>"show", "controller"=>"searches", "max_price"=>"15", "keywords"=>"ruby", "min_price"=>"10"}
+  [4;36;1mTaxonomy Load (0.0ms)[0m   [0;1mSELECT * FROM `taxonomies`[0m
+  [4;35;1mTaxonomy Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `taxonomies`[0m
+  [4;36;1mTaxon Load (0.0ms)[0m   [0;1mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.taxonomy_id IN (276849385,402847427) AND (parent_id is null))[0m
+  [4;35;1mTaxon Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `taxons`[0m
+  [4;36;1mTaxon Load (1.0ms)[0m   [0;1mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.parent_id IN (1000,20000)) ORDER BY position[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mAppConfiguration Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `configurations`[0m
+  [4;35;1mAppConfiguration Load (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mProduct Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`name` LIKE '%ruby%' AND `products`.`master_price` >= 10.0 AND `products`.`master_price` <= 15.0) AND (products.available_on <= '2009-08-17 14:48:39' and products.deleted_at is null) ORDER BY `products`.`available_on` DESC LIMIT 10[0m
+  [4;36;1mImage Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (0.0ms)[0m   [0mSELECT `assets`.* FROM `assets` WHERE (`assets`.`viewable_id` = 863378198 and `assets`.`viewable_type` = 'Product') AND ( (`assets`.`type` = 'Image' ) ) ORDER BY position[0m
+Rendering template within layouts/application
+Rendering searches/show
+Rendered shared/_taxonomies (2.0ms)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mTaxConfiguration Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `configurations`[0m
+  [4;36;1mTaxConfiguration Load (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+Rendered shared/_products (38.0ms)
+Rendered shared/_sort_bar (6.0ms)
+  [4;35;1mSQL (2.0ms)[0m   [0mSELECT count(`products`.id) AS count_id FROM `products` WHERE (`products`.`name` LIKE '%ruby%' AND `products`.`master_price` >= 10.0 AND `products`.`master_price` <= 15.0) AND (products.available_on <= '2009-08-17 14:48:39' and products.deleted_at is null)[0m
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendered shared/_login_bar (34.0ms)
+Rendered shared/_store_menu (2.0ms)
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_language_bar (6.0ms)
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_footer (18.0ms)
+Completed in 668ms (View: 349, DB: 32) | 200 OK [http://localhost/searches/show?keywords=ruby&max_price=15&min_price=10]
+  [4;35;1mOrder Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#create (for 127.0.0.1 at 2009-08-17 20:18:49) [POST]
+  Parameters: {"search"=>{"taxon_id"=>"", "max_price"=>"20", "subtaxons"=>"0", "min_price"=>"10", "keywords"=>"ruby"}, "commit"=>"Send", "action"=>"create", "authenticity_token"=>"YdmRET0xsd0xtt/wQ98qFdI6LvPfcqOe8LzGoKLwOs8=", "controller"=>"searches"}
+  [4;35;1mTaxonomy Load (1.0ms)[0m   [0mSELECT * FROM `taxonomies`[0m
+  [4;36;1mTaxonomy Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `taxonomies`[0m
+  [4;35;1mTaxon Load (0.0ms)[0m   [0mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.taxonomy_id IN (276849385,402847427) AND (parent_id is null))[0m
+  [4;36;1mTaxon Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `taxons`[0m
+  [4;35;1mTaxon Load (0.0ms)[0m   [0mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.parent_id IN (1000,20000)) ORDER BY position[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mAppConfiguration Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `configurations`[0m
+  [4;36;1mAppConfiguration Load (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Redirected to http://localhost:3000/searches/show?keywords=ruby&max_price=20&min_price=10
+Completed in 255ms (DB: 11) | 302 Found [http://localhost/searches]
+  [4;35;1mOrder Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2009-08-17 20:18:50) [GET]
+  Parameters: {"action"=>"show", "id"=>"show", "controller"=>"searches", "max_price"=>"20", "keywords"=>"ruby", "min_price"=>"10"}
+  [4;35;1mTaxonomy Load (1.0ms)[0m   [0mSELECT * FROM `taxonomies`[0m
+  [4;36;1mTaxonomy Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `taxonomies`[0m
+  [4;35;1mTaxon Load (1.0ms)[0m   [0mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.taxonomy_id IN (276849385,402847427) AND (parent_id is null))[0m
+  [4;36;1mTaxon Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `taxons`[0m
+  [4;35;1mTaxon Load (1.0ms)[0m   [0mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.parent_id IN (1000,20000)) ORDER BY position[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mAppConfiguration Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `configurations`[0m
+  [4;36;1mAppConfiguration Load (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mProduct Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`name` LIKE '%ruby%' AND `products`.`master_price` >= 10.0 AND `products`.`master_price` <= 20.0) AND (products.available_on <= '2009-08-17 14:48:51' and products.deleted_at is null) ORDER BY `products`.`available_on` DESC LIMIT 10[0m
+  [4;35;1mImage Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `assets`[0m
+  [4;36;1mImage Load (0.0ms)[0m   [0;1mSELECT `assets`.* FROM `assets` WHERE (`assets`.`viewable_id` IN (827682565,863378198,518820413,672404575,637144772,452235760,25673712) and `assets`.`viewable_type` = 'Product') AND ( (`assets`.`type` = 'Image' ) ) ORDER BY position[0m
+Rendering template within layouts/application
+Rendering searches/show
+Rendered shared/_taxonomies (3.0ms)
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mTaxConfiguration Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `configurations`[0m
+  [4;35;1mTaxConfiguration Load (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+Rendered shared/_products (109.0ms)
+Rendered shared/_sort_bar (4.0ms)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(`products`.id) AS count_id FROM `products` WHERE (`products`.`name` LIKE '%ruby%' AND `products`.`master_price` >= 10.0 AND `products`.`master_price` <= 20.0) AND (products.available_on <= '2009-08-17 14:48:51' and products.deleted_at is null)[0m
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendered shared/_login_bar (33.0ms)
+Rendered shared/_store_menu (2.0ms)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_language_bar (6.0ms)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_footer (17.0ms)
+Completed in 745ms (View: 398, DB: 44) | 200 OK [http://localhost/searches/show?keywords=ruby&max_price=20&min_price=10]
+  [4;36;1mOrder Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `orders`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-08-18 11:04:26) [GET]
+  Parameters: {"action"=>"index", "controller"=>"products"}
+  [4;36;1mTaxonomy Load (1.0ms)[0m   [0;1mSELECT * FROM `taxonomies`[0m
+  [4;35;1mTaxonomy Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `taxonomies`[0m
+  [4;36;1mTaxon Load (0.0ms)[0m   [0;1mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.taxonomy_id IN (276849385,402847427) AND (parent_id is null))[0m
+  [4;35;1mTaxon Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `taxons`[0m
+  [4;36;1mTaxon Load (0.0ms)[0m   [0;1mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.parent_id IN (1000,20000)) ORDER BY position[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mAppConfiguration Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `configurations`[0m
+  [4;35;1mAppConfiguration Load (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mRole Columns (23.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mUser Load IDs For Limited Eager Loading (11.0ms)[0m   [0;1mSELECT DISTINCT `users`.id FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') LIMIT 1[0m
+  [4;35;1mUser Load Including Associations (1.0ms)[0m   [0mSELECT `users`.`id` AS t0_r0, `users`.`email` AS t0_r1, `users`.`crypted_password` AS t0_r2, `users`.`salt` AS t0_r3, `users`.`remember_token` AS t0_r4, `users`.`remember_token_expires_at` AS t0_r5, `users`.`created_at` AS t0_r6, `users`.`updated_at` AS t0_r7, `users`.`persistence_token` AS t0_r8, `users`.`single_access_token` AS t0_r9, `users`.`perishable_token` AS t0_r10, `users`.`login_count` AS t0_r11, `users`.`failed_login_count` AS t0_r12, `users`.`last_request_at` AS t0_r13, `users`.`current_login_at` AS t0_r14, `users`.`last_login_at` AS t0_r15, `users`.`current_login_ip` AS t0_r16, `users`.`last_login_ip` AS t0_r17, `users`.`login` AS t0_r18, `roles`.`id` AS t1_r0, `roles`.`name` AS t1_r1 FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') AND `users`.id IN (131329753)[0m
+  [4;36;1mProduct Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM `products` WHERE (products.available_on <= '2009-08-18 05:34:27' and products.deleted_at is null) ORDER BY `products`.`available_on` DESC LIMIT 10[0m
+  [4;36;1mImage Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (2.0ms)[0m   [0mSELECT `assets`.* FROM `assets` WHERE (`assets`.`viewable_id` IN (827682565,863378198,768308771,109241137,518820413,672404575,637144772,452235760,25673712) and `assets`.`viewable_type` = 'Product') AND ( (`assets`.`type` = 'Image' ) ) ORDER BY position[0m
+Rendering template within layouts/application
+Rendering products/index
+  [4;36;1mTaxon Load (1.0ms)[0m   [0;1mSELECT * FROM `taxons` WHERE (parent_id = 1001)[0m
+  [4;35;1mTaxon Load (1.0ms)[0m   [0mSELECT * FROM `taxons` WHERE (parent_id = 1002)[0m
+  [4;36;1mTaxon Load (0.0ms)[0m   [0;1mSELECT * FROM `taxons` WHERE (parent_id = 1003)[0m
+Rendered shared/_taxonomies_all (19.0ms)
+Rendered shared/_login_bar (15.0ms)
+Rendered shared/_store_menu (1.0ms)
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_language_bar (6.0ms)
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_footer (18.0ms)
+Completed in 698ms (View: 178, DB: 65) | 200 OK [http://localhost/]
+  [4;35;1mOrder Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TaxonsController#show (for 127.0.0.1 at 2009-08-18 11:04:33) [GET]
+  Parameters: {"action"=>"show", "id"=>["Categories", "Clothing", "Shirts"], "controller"=>"taxons"}
+  [4;35;1mTaxonomy Load (0.0ms)[0m   [0mSELECT * FROM `taxonomies`[0m
+  [4;36;1mTaxonomy Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `taxonomies`[0m
+  [4;35;1mTaxon Load (0.0ms)[0m   [0mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.taxonomy_id IN (276849385,402847427) AND (parent_id is null))[0m
+  [4;36;1mTaxon Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `taxons`[0m
+  [4;35;1mTaxon Load (0.0ms)[0m   [0mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.parent_id IN (1000,20000)) ORDER BY position[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mAppConfiguration Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `configurations`[0m
+  [4;36;1mAppConfiguration Load (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mTaxon Load (0.0ms)[0m   [0mSELECT * FROM `taxons` WHERE (`taxons`.`permalink` = 'Categories/Clothing/Shirts/') LIMIT 1[0m
+  [4;36;1mProduct Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mProduct Load (3.0ms)[0m   [0mSELECT `products`.* FROM `products` INNER JOIN `products_taxons` ON `products`.id = `products_taxons`.product_id WHERE (((products.available_on <= '2009-08-18 05:34:33' and products.deleted_at is null) AND (`products_taxons`.taxon_id = 2000 )) AND (`products_taxons`.taxon_id = 2000 )) ORDER BY `products`.`available_on` DESC LIMIT 10[0m
+  [4;36;1mImage Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (1.0ms)[0m   [0mSELECT `assets`.* FROM `assets` WHERE (`assets`.`viewable_id` = 672404575 and `assets`.`viewable_type` = 'Product') AND ( (`assets`.`type` = 'Image' ) ) ORDER BY position[0m
+Rendering template within layouts/application
+Rendering taxons/show
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `taxons` WHERE (`taxons`.parent_id = 2000)[0m
+  [4;35;1mTaxon Load (0.0ms)[0m   [0mSELECT * FROM `taxons` WHERE (`taxons`.parent_id = 2000) ORDER BY position[0m
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT `products`.* FROM `products` INNER JOIN `products_taxons` ON `products`.id = `products_taxons`.product_id WHERE (((products.available_on <= '2009-08-18 05:34:33' and products.deleted_at is null) AND (`products_taxons`.taxon_id = 3000 )) AND (`products_taxons`.taxon_id = 3000 )) LIMIT 25[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mTaxon Load (1.0ms)[0m   [0mSELECT * FROM `taxons` WHERE (`taxons`.parent_id = 3000) ORDER BY position[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `assets` WHERE (`assets`.viewable_id = 518820413 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) )[0m
+  [4;35;1mImage Load (1.0ms)[0m   [0mSELECT * FROM `assets` WHERE (`assets`.viewable_id = 518820413 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) ) ORDER BY position LIMIT 1[0m
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;36;1mProductStore Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `product_stores`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM `product_stores` WHERE (`product_stores`.product_id = 518820413)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mTaxConfiguration Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `configurations`[0m
+  [4;36;1mTaxConfiguration Load (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM `assets` WHERE (`assets`.viewable_id = 25673712 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) )[0m
+  [4;36;1mImage Load (0.0ms)[0m   [0;1mSELECT * FROM `assets` WHERE (`assets`.viewable_id = 25673712 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) ) ORDER BY position LIMIT 1[0m
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `product_stores` WHERE (`product_stores`.product_id = 25673712)[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `assets` WHERE (`assets`.viewable_id = 109241137 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) )[0m
+  [4;35;1mImage Load (0.0ms)[0m   [0mSELECT * FROM `assets` WHERE (`assets`.viewable_id = 109241137 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) ) ORDER BY position LIMIT 1[0m
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `product_stores` WHERE (`product_stores`.product_id = 109241137)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `assets` WHERE (`assets`.viewable_id = 827682565 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) )[0m
+  [4;36;1mImage Load (1.0ms)[0m   [0;1mSELECT * FROM `assets` WHERE (`assets`.viewable_id = 827682565 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) ) ORDER BY position LIMIT 1[0m
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `product_stores` WHERE (`product_stores`.product_id = 827682565)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+Rendered shared/_products (111.0ms)
+Rendered taxons/_taxon (224.0ms)
+  [4;36;1mUser Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendered shared/_login_bar (34.0ms)
+Rendered shared/_store_menu (2.0ms)
+  [4;35;1mTaxon Load (0.0ms)[0m   [0mSELECT * FROM `taxons` WHERE (`taxons`.`id` = 1001)[0m
+  [4;36;1mTaxon Load (1.0ms)[0m   [0;1mSELECT * FROM `taxons` WHERE (`taxons`.`id` = 1000)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_language_bar (6.0ms)
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_footer (17.0ms)
+Completed in 752ms (View: 406, DB: 48) | 200 OK [http://localhost/t/Categories/Clothing/Shirts/]
+  [4;35;1mOrder Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#test (for 127.0.0.1 at 2009-08-18 11:04:46) [GET]
+  Parameters: {"action"=>"test", "controller"=>"searches"}
+  [4;35;1mTaxonomy Load (1.0ms)[0m   [0mSELECT * FROM `taxonomies`[0m
+  [4;36;1mTaxonomy Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `taxonomies`[0m
+  [4;35;1mTaxon Load (0.0ms)[0m   [0mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.taxonomy_id IN (276849385,402847427) AND (parent_id is null))[0m
+  [4;36;1mTaxon Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `taxons`[0m
+  [4;35;1mTaxon Load (0.0ms)[0m   [0mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.parent_id IN (1000,20000)) ORDER BY position[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mAppConfiguration Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `configurations`[0m
+  [4;36;1mAppConfiguration Load (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendering template within layouts/application
+Rendering searches/test
+Rendered shared/_search_box (3.0ms)
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendered shared/_login_bar (33.0ms)
+Rendered shared/_store_menu (2.0ms)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_language_bar (6.0ms)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_footer (18.0ms)
+Completed in 445ms (View: 294, DB: 13) | 200 OK [http://localhost/search/test]
+  [4;36;1mOrder Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `orders`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-08-18 11:04:53) [GET]
+  Parameters: {"action"=>"index", "controller"=>"products", "keywords"=>"ruby"}
+  [4;36;1mTaxonomy Load (1.0ms)[0m   [0;1mSELECT * FROM `taxonomies`[0m
+  [4;35;1mTaxonomy Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `taxonomies`[0m
+  [4;36;1mTaxon Load (0.0ms)[0m   [0;1mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.taxonomy_id IN (276849385,402847427) AND (parent_id is null))[0m
+  [4;35;1mTaxon Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `taxons`[0m
+  [4;36;1mTaxon Load (0.0ms)[0m   [0;1mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.parent_id IN (1000,20000)) ORDER BY position[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mAppConfiguration Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `configurations`[0m
+  [4;35;1mAppConfiguration Load (2.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mRole Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mUser Load IDs For Limited Eager Loading (0.0ms)[0m   [0;1mSELECT DISTINCT `users`.id FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') LIMIT 1[0m
+  [4;35;1mUser Load Including Associations (0.0ms)[0m   [0mSELECT `users`.`id` AS t0_r0, `users`.`email` AS t0_r1, `users`.`crypted_password` AS t0_r2, `users`.`salt` AS t0_r3, `users`.`remember_token` AS t0_r4, `users`.`remember_token_expires_at` AS t0_r5, `users`.`created_at` AS t0_r6, `users`.`updated_at` AS t0_r7, `users`.`persistence_token` AS t0_r8, `users`.`single_access_token` AS t0_r9, `users`.`perishable_token` AS t0_r10, `users`.`login_count` AS t0_r11, `users`.`failed_login_count` AS t0_r12, `users`.`last_request_at` AS t0_r13, `users`.`current_login_at` AS t0_r14, `users`.`last_login_at` AS t0_r15, `users`.`current_login_ip` AS t0_r16, `users`.`last_login_ip` AS t0_r17, `users`.`login` AS t0_r18, `roles`.`id` AS t1_r0, `roles`.`name` AS t1_r1 FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') AND `users`.id IN (131329753)[0m
+  [4;36;1mProduct Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`name` LIKE '%ruby%') AND (products.available_on <= '2009-08-18 05:34:54' and products.deleted_at is null) ORDER BY `products`.`available_on` DESC LIMIT 10[0m
+  [4;36;1mImage Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (1.0ms)[0m   [0mSELECT `assets`.* FROM `assets` WHERE (`assets`.`viewable_id` IN (827682565,863378198,768308771,518820413,672404575,637144772,452235760,25673712) and `assets`.`viewable_type` = 'Product') AND ( (`assets`.`type` = 'Image' ) ) ORDER BY position[0m
+Rendering template within layouts/application
+Rendering products/index
+  [4;36;1mTaxon Load (0.0ms)[0m   [0;1mSELECT * FROM `taxons` WHERE (parent_id = 1001)[0m
+  [4;35;1mTaxon Load (0.0ms)[0m   [0mSELECT * FROM `taxons` WHERE (parent_id = 1002)[0m
+  [4;36;1mTaxon Load (0.0ms)[0m   [0;1mSELECT * FROM `taxons` WHERE (parent_id = 1003)[0m
+Rendered shared/_taxonomies_all (5.0ms)
+Rendered shared/_login_bar (15.0ms)
+Rendered shared/_store_menu (1.0ms)
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_language_bar (6.0ms)
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_footer (18.0ms)
+Completed in 565ms (View: 71, DB: 34) | 200 OK [http://localhost/products?keywords=ruby]
+  [4;35;1mOrder Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TaxonsController#show (for 127.0.0.1 at 2009-08-18 11:04:57) [GET]
+  Parameters: {"action"=>"show", "id"=>["Categories", "Clothing", "Shirts"], "controller"=>"taxons"}
+  [4;35;1mTaxonomy Load (1.0ms)[0m   [0mSELECT * FROM `taxonomies`[0m
+  [4;36;1mTaxonomy Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `taxonomies`[0m
+  [4;35;1mTaxon Load (0.0ms)[0m   [0mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.taxonomy_id IN (276849385,402847427) AND (parent_id is null))[0m
+  [4;36;1mTaxon Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `taxons`[0m
+  [4;35;1mTaxon Load (0.0ms)[0m   [0mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.parent_id IN (1000,20000)) ORDER BY position[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mAppConfiguration Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `configurations`[0m
+  [4;36;1mAppConfiguration Load (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mTaxon Load (0.0ms)[0m   [0mSELECT * FROM `taxons` WHERE (`taxons`.`permalink` = 'Categories/Clothing/Shirts/') LIMIT 1[0m
+  [4;36;1mProduct Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mProduct Load (3.0ms)[0m   [0mSELECT `products`.* FROM `products` INNER JOIN `products_taxons` ON `products`.id = `products_taxons`.product_id WHERE (((products.available_on <= '2009-08-18 05:34:57' and products.deleted_at is null) AND (`products_taxons`.taxon_id = 2000 )) AND (`products_taxons`.taxon_id = 2000 )) ORDER BY `products`.`available_on` DESC LIMIT 10[0m
+  [4;36;1mImage Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (1.0ms)[0m   [0mSELECT `assets`.* FROM `assets` WHERE (`assets`.`viewable_id` = 672404575 and `assets`.`viewable_type` = 'Product') AND ( (`assets`.`type` = 'Image' ) ) ORDER BY position[0m
+Rendering template within layouts/application
+Rendering taxons/show
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `taxons` WHERE (`taxons`.parent_id = 2000)[0m
+  [4;35;1mTaxon Load (1.0ms)[0m   [0mSELECT * FROM `taxons` WHERE (`taxons`.parent_id = 2000) ORDER BY position[0m
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT `products`.* FROM `products` INNER JOIN `products_taxons` ON `products`.id = `products_taxons`.product_id WHERE (((products.available_on <= '2009-08-18 05:34:58' and products.deleted_at is null) AND (`products_taxons`.taxon_id = 3000 )) AND (`products_taxons`.taxon_id = 3000 )) LIMIT 25[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mTaxon Load (0.0ms)[0m   [0mSELECT * FROM `taxons` WHERE (`taxons`.parent_id = 3000) ORDER BY position[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `assets` WHERE (`assets`.viewable_id = 518820413 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) )[0m
+  [4;35;1mImage Load (0.0ms)[0m   [0mSELECT * FROM `assets` WHERE (`assets`.viewable_id = 518820413 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) ) ORDER BY position LIMIT 1[0m
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;36;1mProductStore Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `product_stores`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `product_stores` WHERE (`product_stores`.product_id = 518820413)[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mTaxConfiguration Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `configurations`[0m
+  [4;36;1mTaxConfiguration Load (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `assets` WHERE (`assets`.viewable_id = 25673712 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) )[0m
+  [4;36;1mImage Load (0.0ms)[0m   [0;1mSELECT * FROM `assets` WHERE (`assets`.viewable_id = 25673712 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) ) ORDER BY position LIMIT 1[0m
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `product_stores` WHERE (`product_stores`.product_id = 25673712)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `assets` WHERE (`assets`.viewable_id = 109241137 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) )[0m
+  [4;35;1mImage Load (0.0ms)[0m   [0mSELECT * FROM `assets` WHERE (`assets`.viewable_id = 109241137 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) ) ORDER BY position LIMIT 1[0m
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `product_stores` WHERE (`product_stores`.product_id = 109241137)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM `assets` WHERE (`assets`.viewable_id = 827682565 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) )[0m
+  [4;36;1mImage Load (0.0ms)[0m   [0;1mSELECT * FROM `assets` WHERE (`assets`.viewable_id = 827682565 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) ) ORDER BY position LIMIT 1[0m
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `product_stores` WHERE (`product_stores`.product_id = 827682565)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+Rendered shared/_products (103.0ms)
+Rendered taxons/_taxon (116.0ms)
+  [4;36;1mUser Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendered shared/_login_bar (131.0ms)
+Rendered shared/_store_menu (1.0ms)
+  [4;35;1mTaxon Load (0.0ms)[0m   [0mSELECT * FROM `taxons` WHERE (`taxons`.`id` = 1001)[0m
+  [4;36;1mTaxon Load (0.0ms)[0m   [0;1mSELECT * FROM `taxons` WHERE (`taxons`.`id` = 1000)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_language_bar (7.0ms)
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_footer (19.0ms)
+Completed in 730ms (View: 392, DB: 53) | 200 OK [http://localhost/t/Categories/Clothing/Shirts/]
+  [4;35;1mOrder Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-08-18 11:05:21) [GET]
+  Parameters: {"action"=>"index", "controller"=>"products", "keywords"=>"dkdkd"}
+  [4;35;1mTaxonomy Load (1.0ms)[0m   [0mSELECT * FROM `taxonomies`[0m
+  [4;36;1mTaxonomy Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `taxonomies`[0m
+  [4;35;1mTaxon Load (0.0ms)[0m   [0mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.taxonomy_id IN (276849385,402847427) AND (parent_id is null))[0m
+  [4;36;1mTaxon Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `taxons`[0m
+  [4;35;1mTaxon Load (0.0ms)[0m   [0mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.parent_id IN (1000,20000)) ORDER BY position[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mAppConfiguration Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `configurations`[0m
+  [4;36;1mAppConfiguration Load (1.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mRole Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mUser Load IDs For Limited Eager Loading (1.0ms)[0m   [0mSELECT DISTINCT `users`.id FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') LIMIT 1[0m
+  [4;36;1mUser Load Including Associations (1.0ms)[0m   [0;1mSELECT `users`.`id` AS t0_r0, `users`.`email` AS t0_r1, `users`.`crypted_password` AS t0_r2, `users`.`salt` AS t0_r3, `users`.`remember_token` AS t0_r4, `users`.`remember_token_expires_at` AS t0_r5, `users`.`created_at` AS t0_r6, `users`.`updated_at` AS t0_r7, `users`.`persistence_token` AS t0_r8, `users`.`single_access_token` AS t0_r9, `users`.`perishable_token` AS t0_r10, `users`.`login_count` AS t0_r11, `users`.`failed_login_count` AS t0_r12, `users`.`last_request_at` AS t0_r13, `users`.`current_login_at` AS t0_r14, `users`.`last_login_at` AS t0_r15, `users`.`current_login_ip` AS t0_r16, `users`.`last_login_ip` AS t0_r17, `users`.`login` AS t0_r18, `roles`.`id` AS t1_r0, `roles`.`name` AS t1_r1 FROM `users` LEFT OUTER JOIN `roles_users` ON `roles_users`.user_id = `users`.id LEFT OUTER JOIN `roles` ON `roles`.id = `roles_users`.role_id WHERE (roles.name = 'admin') AND `users`.id IN (131329753)[0m
+  [4;35;1mProduct Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`name` LIKE '%dkdkd%') AND (products.available_on <= '2009-08-18 05:35:22' and products.deleted_at is null) ORDER BY `products`.`available_on` DESC LIMIT 10[0m
+Rendering template within layouts/application
+Rendering products/index
+  [4;35;1mTaxon Load (1.0ms)[0m   [0mSELECT * FROM `taxons` WHERE (parent_id = 1001)[0m
+  [4;36;1mTaxon Load (0.0ms)[0m   [0;1mSELECT * FROM `taxons` WHERE (parent_id = 1002)[0m
+  [4;35;1mTaxon Load (1.0ms)[0m   [0mSELECT * FROM `taxons` WHERE (parent_id = 1003)[0m
+Rendered shared/_taxonomies_all (6.0ms)
+Rendered shared/_login_bar (14.0ms)
+Rendered shared/_store_menu (2.0ms)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_language_bar (6.0ms)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_footer (16.0ms)
+Completed in 602ms (View: 162, DB: 26) | 200 OK [http://localhost/products?keywords=dkdkd]
+  [4;36;1mOrder Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `orders`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TaxonsController#show (for 127.0.0.1 at 2009-08-18 11:05:25) [GET]
+  Parameters: {"action"=>"show", "id"=>["Categories", "Clothing", "Shirts"], "controller"=>"taxons"}
+  [4;36;1mTaxonomy Load (1.0ms)[0m   [0;1mSELECT * FROM `taxonomies`[0m
+  [4;35;1mTaxonomy Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `taxonomies`[0m
+  [4;36;1mTaxon Load (0.0ms)[0m   [0;1mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.taxonomy_id IN (276849385,402847427) AND (parent_id is null))[0m
+  [4;35;1mTaxon Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `taxons`[0m
+  [4;36;1mTaxon Load (0.0ms)[0m   [0;1mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.parent_id IN (1000,20000)) ORDER BY position[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mAppConfiguration Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `configurations`[0m
+  [4;35;1mAppConfiguration Load (2.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mTaxon Load (0.0ms)[0m   [0;1mSELECT * FROM `taxons` WHERE (`taxons`.`permalink` = 'Categories/Clothing/Shirts/') LIMIT 1[0m
+  [4;35;1mProduct Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mProduct Load (3.0ms)[0m   [0;1mSELECT `products`.* FROM `products` INNER JOIN `products_taxons` ON `products`.id = `products_taxons`.product_id WHERE (((products.available_on <= '2009-08-18 05:35:26' and products.deleted_at is null) AND (`products_taxons`.taxon_id = 2000 )) AND (`products_taxons`.taxon_id = 2000 )) ORDER BY `products`.`available_on` DESC LIMIT 10[0m
+  [4;35;1mImage Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `assets`[0m
+  [4;36;1mImage Load (1.0ms)[0m   [0;1mSELECT `assets`.* FROM `assets` WHERE (`assets`.`viewable_id` = 672404575 and `assets`.`viewable_type` = 'Product') AND ( (`assets`.`type` = 'Image' ) ) ORDER BY position[0m
+Rendering template within layouts/application
+Rendering taxons/show
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `taxons` WHERE (`taxons`.parent_id = 2000)[0m
+  [4;36;1mTaxon Load (0.0ms)[0m   [0;1mSELECT * FROM `taxons` WHERE (`taxons`.parent_id = 2000) ORDER BY position[0m
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT `products`.* FROM `products` INNER JOIN `products_taxons` ON `products`.id = `products_taxons`.product_id WHERE (((products.available_on <= '2009-08-18 05:35:26' and products.deleted_at is null) AND (`products_taxons`.taxon_id = 3000 )) AND (`products_taxons`.taxon_id = 3000 )) LIMIT 25[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mTaxon Load (0.0ms)[0m   [0;1mSELECT * FROM `taxons` WHERE (`taxons`.parent_id = 3000) ORDER BY position[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `assets` WHERE (`assets`.viewable_id = 518820413 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) )[0m
+  [4;36;1mImage Load (0.0ms)[0m   [0;1mSELECT * FROM `assets` WHERE (`assets`.viewable_id = 518820413 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) ) ORDER BY position LIMIT 1[0m
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;35;1mProductStore Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `product_stores`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `product_stores` WHERE (`product_stores`.product_id = 518820413)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mTaxConfiguration Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `configurations`[0m
+  [4;35;1mTaxConfiguration Load (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `assets` WHERE (`assets`.viewable_id = 25673712 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) )[0m
+  [4;35;1mImage Load (0.0ms)[0m   [0mSELECT * FROM `assets` WHERE (`assets`.viewable_id = 25673712 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) ) ORDER BY position LIMIT 1[0m
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `product_stores` WHERE (`product_stores`.product_id = 25673712)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM `assets` WHERE (`assets`.viewable_id = 109241137 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) )[0m
+  [4;36;1mImage Load (1.0ms)[0m   [0;1mSELECT * FROM `assets` WHERE (`assets`.viewable_id = 109241137 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) ) ORDER BY position LIMIT 1[0m
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `product_stores` WHERE (`product_stores`.product_id = 109241137)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `assets` WHERE (`assets`.viewable_id = 827682565 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) )[0m
+  [4;35;1mImage Load (0.0ms)[0m   [0mSELECT * FROM `assets` WHERE (`assets`.viewable_id = 827682565 AND `assets`.viewable_type = 'Product') AND ( (`assets`.`type` = 'Image' ) ) ORDER BY position LIMIT 1[0m
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `product_stores` WHERE (`product_stores`.product_id = 827682565)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+Rendered shared/_products (105.0ms)
+Rendered taxons/_taxon (119.0ms)
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendered shared/_login_bar (32.0ms)
+Rendered shared/_store_menu (1.0ms)
+  [4;36;1mTaxon Load (1.0ms)[0m   [0;1mSELECT * FROM `taxons` WHERE (`taxons`.`id` = 1001)[0m
+  [4;35;1mTaxon Load (0.0ms)[0m   [0mSELECT * FROM `taxons` WHERE (`taxons`.`id` = 1000)[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_language_bar (7.0ms)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_footer (107.0ms)
+Completed in 826ms (View: 482, DB: 53) | 200 OK [http://localhost/t/Categories/Clothing/Shirts/]
+  [4;36;1mOrder Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `orders`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#new (for 127.0.0.1 at 2009-08-18 11:05:35) [GET]
+  Parameters: {"action"=>"new", "controller"=>"searches"}
+  [4;36;1mTaxonomy Load (0.0ms)[0m   [0;1mSELECT * FROM `taxonomies`[0m
+  [4;35;1mTaxonomy Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `taxonomies`[0m
+  [4;36;1mTaxon Load (0.0ms)[0m   [0;1mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.taxonomy_id IN (276849385,402847427) AND (parent_id is null))[0m
+  [4;35;1mTaxon Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `taxons`[0m
+  [4;36;1mTaxon Load (0.0ms)[0m   [0;1mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.parent_id IN (1000,20000)) ORDER BY position[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mAppConfiguration Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `configurations`[0m
+  [4;35;1mAppConfiguration Load (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendering template within layouts/application
+Rendering searches/new
+Rendered shared/_taxonomies (3.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `taxonomies`[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.taxonomy_id IN (276849385,402847427) AND (parent_id is null))[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.parent_id IN (1000,20000)) ORDER BY position[0m
+  [4;35;1mTaxon Load (1.0ms)[0m   [0mSELECT * FROM `taxons` WHERE (`taxons`.parent_id = 1001) ORDER BY position[0m
+  [4;36;1mTaxon Load (0.0ms)[0m   [0;1mSELECT * FROM `taxons` WHERE (`taxons`.parent_id = 2000) ORDER BY position[0m
+  [4;35;1mTaxon Load (0.0ms)[0m   [0mSELECT * FROM `taxons` WHERE (`taxons`.parent_id = 3000) ORDER BY position[0m
+  [4;36;1mTaxon Load (0.0ms)[0m   [0;1mSELECT * FROM `taxons` WHERE (`taxons`.parent_id = 1002) ORDER BY position[0m
+  [4;35;1mTaxon Load (0.0ms)[0m   [0mSELECT * FROM `taxons` WHERE (`taxons`.parent_id = 1003) ORDER BY position[0m
+  [4;36;1mTaxon Load (1.0ms)[0m   [0;1mSELECT * FROM `taxons` WHERE (`taxons`.parent_id = 241670986) ORDER BY position[0m
+  [4;35;1mTaxon Load (0.0ms)[0m   [0mSELECT * FROM `taxons` WHERE (`taxons`.parent_id = 354131119) ORDER BY position[0m
+  [4;36;1mTaxon Load (0.0ms)[0m   [0;1mSELECT * FROM `taxons` WHERE (`taxons`.parent_id = 268740766) ORDER BY position[0m
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendered shared/_login_bar (33.0ms)
+Rendered shared/_store_menu (2.0ms)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_language_bar (103.0ms)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_footer (114.0ms)
+Completed in 590ms (View: 338, DB: 18) | 200 OK [http://localhost/searches/new]
+  [4;36;1mOrder Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `orders`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#create (for 127.0.0.1 at 2009-08-18 11:05:47) [POST]
+  Parameters: {"search"=>{"taxon_id"=>"", "max_price"=>"20", "subtaxons"=>"0", "min_price"=>"10", "keywords"=>"apache"}, "commit"=>"Send", "action"=>"create", "authenticity_token"=>"YdmRET0xsd0xtt/wQ98qFdI6LvPfcqOe8LzGoKLwOs8=", "controller"=>"searches"}
+  [4;36;1mTaxonomy Load (1.0ms)[0m   [0;1mSELECT * FROM `taxonomies`[0m
+  [4;35;1mTaxonomy Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `taxonomies`[0m
+  [4;36;1mTaxon Load (1.0ms)[0m   [0;1mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.taxonomy_id IN (276849385,402847427) AND (parent_id is null))[0m
+  [4;35;1mTaxon Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `taxons`[0m
+  [4;36;1mTaxon Load (0.0ms)[0m   [0;1mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.parent_id IN (1000,20000)) ORDER BY position[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mAppConfiguration Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `configurations`[0m
+  [4;35;1mAppConfiguration Load (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Redirected to http://localhost:3000/searches/show?keywords=apache&max_price=20&min_price=10
+Completed in 252ms (DB: 14) | 302 Found [http://localhost/searches]
+  [4;36;1mOrder Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `orders`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2009-08-18 11:05:49) [GET]
+  Parameters: {"action"=>"show", "id"=>"show", "controller"=>"searches", "max_price"=>"20", "keywords"=>"apache", "min_price"=>"10"}
+  [4;36;1mTaxonomy Load (0.0ms)[0m   [0;1mSELECT * FROM `taxonomies`[0m
+  [4;35;1mTaxonomy Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `taxonomies`[0m
+  [4;36;1mTaxon Load (0.0ms)[0m   [0;1mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.taxonomy_id IN (276849385,402847427) AND (parent_id is null))[0m
+  [4;35;1mTaxon Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `taxons`[0m
+  [4;36;1mTaxon Load (1.0ms)[0m   [0;1mSELECT `taxons`.* FROM `taxons` WHERE (`taxons`.parent_id IN (1000,20000)) ORDER BY position[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mAppConfiguration Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `configurations`[0m
+  [4;35;1mAppConfiguration Load (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;36;1mProduct Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`name` LIKE '%apache%' AND `products`.`master_price` >= 10.0 AND `products`.`master_price` <= 20.0) AND (products.available_on <= '2009-08-18 05:35:50' and products.deleted_at is null) ORDER BY `products`.`available_on` DESC LIMIT 10[0m
+  [4;36;1mImage Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `assets`[0m
+  [4;35;1mImage Load (1.0ms)[0m   [0mSELECT `assets`.* FROM `assets` WHERE (`assets`.`viewable_id` = 109241137 and `assets`.`viewable_type` = 'Product') AND ( (`assets`.`type` = 'Image' ) ) ORDER BY position[0m
+Rendering template within layouts/application
+Rendering searches/show
+Rendered shared/_taxonomies (2.0ms)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+[paperclip] Paperclip attachment attachment on Image initialized.
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mTaxConfiguration Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `configurations`[0m
+  [4;36;1mTaxConfiguration Load (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default tax configuration') AND ( (`configurations`.`type` = 'TaxConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Tax::Config ({})
+Rendered shared/_products (37.0ms)
+Rendered shared/_sort_bar (4.0ms)
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(`products`.id) AS count_id FROM `products` WHERE (`products`.`name` LIKE '%apache%' AND `products`.`master_price` >= 10.0 AND `products`.`master_price` <= 20.0) AND (products.available_on <= '2009-08-18 05:35:50' and products.deleted_at is null)[0m
+  [4;36;1mUser Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendered shared/_login_bar (36.0ms)
+Rendered shared/_store_menu (2.0ms)
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_language_bar (6.0ms)
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `configurations` WHERE (`configurations`.`name` = 'Default configuration') AND ( (`configurations`.`type` = 'AppConfiguration' ) ) LIMIT 1[0m
+Cache hit: Spree::Config ({})
+Rendered shared/_footer (17.0ms)
+Completed in 667ms (View: 350, DB: 30) | 200 OK [http://localhost/searches/show?keywords=apache&max_price=20&min_price=10]
+  [4;35;1mOrder Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
