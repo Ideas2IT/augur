@@ -1,12 +1,12 @@
 <div id="footer">
-  <div class="left">
+  <!--<div class="left">
     <p>
-      Powered by <a href="http://spreecommerce.com/">Spree</a>
+      Powered by <a href="http://www.ideas2it.com/">ideas2it</a>
     </p>
   </div>
-  <div class="right">
+ , <div class="right">
     <%= render :partial => 'shared/language_bar' if Spree::Config[:allow_locale_switching] %>
-  </div>
+  </div>-->
 </div>   
 <% if Spree::Config[:google_analytics_id] and not %w{development test}.include? RAILS_ENV and not params[:checkout_complete] %>
   <script type="text/javascript">
