@@ -450,3 +450,23 @@ hr.space { background: #dddddd; color: #dddddd; clear: both; float: none; width:
 .product_available { color: #303030; font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 24px; }
 
 .product_store_link { color: #990000; font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 24px; text-decoration: none; }
+
+#product-description { display: inline; float: left; margin-right: 10px; width: 870px; border: 2px solid; border-color: #d84734; }
+#product-description li { list-style-type: none; margin-left: 0px; }
+* html #product-description { overflow-x: hidden; }
+
+#column_head { background-color: #d84734; color: #FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: 15px; font-weight: bold; line-height: 34px; text-align: center; }
+#column_head li { list-style-type: none; margin-left: 0px; }
+
+#product_value { font-family: !fontfamily; font-size: 12px; text-decoration: none; text-align: center; }
+#product_value li { list-style-type: none; margin-left: 0px; }
+
+.price-value { font-weight: bold; line-height: 92px; color: #006085; }
+
+.product-desc { color: #000000; padding-top: 40px; }
+
+.product_store_logo { padding-top: 25px; }
+
+.seedeal { padding-top: 40px; }
+
+.product_head { color: #CC3333; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 16px; font-weight: bold; line-height: 24px; }
