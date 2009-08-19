@@ -19,10 +19,13 @@
 		</div>
 		<hr />
 		<%@taxons = Taxon.find(:all,:conditions => ['parent_id = ?' , taxon.id])%>
-		<div class="prepend-top">
-			<%@taxons.each do |taxon_second|%>
-				<%=link_to taxon_second.name , "/t/#{taxonomy.name.gsub(' ' , '-')}/#{taxon.name.gsub(' ' , '-')}/#{taxon_second.name.gsub(' ' , '-')}/" ,:class => "browsecatecontent"%>&nbsp;
-			<%end%>	
+		<div class="prepend-top" id="product-detail">
+			<li>
+				<%@taxons.each do |taxon_second|%>
+					<%=link_to taxon_second.name , "/t/#{taxonomy.name.gsub(' ' , '-')}/#{taxon.name.gsub(' ' , '-')}/#{taxon_second.name.gsub(' ' , '-')}/" %>&nbsp;
+				<%end%>		
+			</li>
+			
 		</div>
 	  </div>
 
