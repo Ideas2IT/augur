@@ -14,7 +14,8 @@
 
 !fontfamily = "Trebuchet MS","Arial","Helvetica","sans-serif"
 !product_font_family = "Arial","Helvetica","sans-serif"
-
+!product_head = "Verdana","Arial","Helvetica","sans-serif"
+!light_red = #D84734
 .browsecatehead 
 	:border-bottom = 0px "solid" #F1F1F1
 	:color = #BE2C2D
@@ -56,3 +57,43 @@
 	:font-size = 11px
 	:line-height = 24px
 	:text-decoration = "none"
+#product-description  
+	+no-bullets
+	+column(22)
+	:border 2px solid
+	:border-color = !light_red
+		
+#column_head
+	+no-bullets
+	:background-color = !light_red
+	:color #FFFFFF
+	:font-family = "Arial","Helvetica","sans-serif"
+	:font-size 15px
+	:font-weight bold
+	:line-height 34px
+	:text-align center 
+
+#product_value
+	+no-bullets
+	:font-family !fontfamily
+	:font-size 12px
+	:text-decoration none
+	:text-align center
+.price-value
+	:font-weight bold	
+	:line-height 92px
+	:color #006085
+.product-desc 
+	:color #000000
+	:padding-top 40px
+.product_store_logo
+	:padding-top 25px
+.seedeal
+	:padding-top 40px	
+	
+.product_head 
+	:color #CC3333
+	:font-family = !product_head
+	:font-size 16px
+	:font-weight bold
+	:line-height 24px	
