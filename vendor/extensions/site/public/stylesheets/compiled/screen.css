@@ -531,8 +531,8 @@ ul#product-thumbnails li.selected { border-color: #999; }
 
 #product-detail li { list-style-type: none; margin-left: 0px; }
 #product-detail li { text-align: left; margin: 1em; border: none; }
-#product-detail li a { color: #006699; font-family: Trebuchet MS, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 24px; }
-#product-detail li a:hover { background: #F4F4F4  no-repeat scroll 0 0; color: #006699; padding-right: 5px; text-decoration: none; }
+#product-detail li a { color: #006699; font-family: Trebuchet MS, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 24px; text-decoration: none; }
+#product-detail li a:hover { background: #F4F4F4  no-repeat scroll 0 0; color: #006699; padding-right: 5px; }
 
 .prices { font-weight: bold; }
 #product-details .prices { font-size: 1.25em; }

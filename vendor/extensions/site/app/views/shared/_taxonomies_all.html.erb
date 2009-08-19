@@ -21,8 +21,14 @@
 		<%@taxons = Taxon.find(:all,:conditions => ['parent_id = ?' , taxon.id])%>
 		<div class="prepend-top" id="product-detail">
 			<li>
+				<%seperator_count = 1%>
 				<%@taxons.each do |taxon_second|%>
-					<%=link_to taxon_second.name , "/t/#{taxonomy.name.gsub(' ' , '-')}/#{taxon.name.gsub(' ' , '-')}/#{taxon_second.name.gsub(' ' , '-')}/" %>&nbsp;
+					<%dispaly_name = "#{taxon_second.name}, "%>
+				    <%if seperator_count == @taxons.size %> 
+						<%dispaly_name = taxon_second.name%>
+					<%end%>					
+					<%=link_to dispaly_name , "/t/#{taxonomy.name.gsub(' ' , '-')}/#{taxon.name.gsub(' ' , '-')}/#{taxon_second.name.gsub(' ' , '-')}/" %>&nbsp;
+					<%seperator_count += 1%>
 				<%end%>		
 			</li>
 			

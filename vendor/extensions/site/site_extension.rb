@@ -1,5 +1,5 @@
 # Uncomment this if you reference any of your controllers in activate
-# require_dependency 'application'
+require_dependency 'application'
 
 class SiteExtension < Spree::Extension
   version "1.0"
@@ -14,5 +14,10 @@ class SiteExtension < Spree::Extension
   
   def activate
     # admin.tabs.add "Site", "/admin/site", :after => "Layouts", :visibility => [:all]
+    AppConfiguration.class_eval do 
+      Spree::Config.set(:stylesheets => "compiled/screen,compiled/site")
+      #Spree::Config[:stylesheets] => "compiled/screen,compiled/site"
+        #preference :stylesheets, :string, :default => 'compiled/screen,compiled/site' 
+    end
   end
 end
