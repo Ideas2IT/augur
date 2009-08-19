@@ -1,0 +1,61 @@
+<% @body_id = 'product-details' %>
+<div class="container">
+	<div class="span-24">
+		<h2 class="product_head"><%= @product.name %></h2>
+		<div id="main-image">
+		<%= render 'image' -%>
+	  </div>
+	  <div id="thumbnails">
+	    <%= render 'thumbnails', :product => @product -%>
+	  </div>
+	  <br/><br/>
+	</div>
+	<hr class="space">
+	<hr class="space">
+	<div class="span-23" id="product-description">
+		<div class="span-22" id="column_head">
+			<div class="span-4">
+				Price
+			</div>
+			<div class="span-6">
+				Store Name
+			</div>
+			<div class="span-8">
+				Product Description
+			</div>
+			<div class="span-4 last">
+				Go to Store
+			</div>
+		</div>
+		<div class="span-22" id="product_value">
+			<div class="span-4">
+				<font class="price-value">
+					<%=product_price(@product)%>	
+				</font>
+			</div>
+			<div class="span-6">
+				<div class="product_store_logo">
+					<%=render 'stores' , :product => @product%>	
+				</div>
+			</div>
+			<div class="span-8">
+				<div class="product-desc">
+					<%= product_description(@product) %>
+				</div>
+			</div>
+			<div class="span-4 last">
+				<div class="seedeal">
+					<%if @product.product_stores.size == 0%> 
+					<%=image_tag 'seedeal.gif'%>
+					<%else%>
+					<%=link_to (image_tag 'seedeal.gif', :onclick => "javascript:call_more_details('#{@product.product_stores[0].description_url}')")%>
+					<%end%>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
