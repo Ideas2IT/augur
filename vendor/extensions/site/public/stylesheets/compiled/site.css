@@ -470,3 +470,10 @@ hr.space { background: #dddddd; color: #dddddd; clear: both; float: none; width:
 .seedeal { padding-top: 40px; }
 
 .product_head { color: #CC3333; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 16px; font-weight: bold; line-height: 24px; }
+
+#product_link li { list-style-type: none; margin-left: 0px; }
+#product_link li { font-family: =!fontfamily; font-size: 12px; font-weight: bold; line-height: 24px; }
+#product_link li a { color: #cc3333; text-decoration: none; }
+#product_link li a:hover { background: #F4F4F4  no-repeat scroll 0 0; }
+
+.moredetails { padding-top: 25px; }
