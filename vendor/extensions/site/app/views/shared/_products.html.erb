@@ -1,7 +1,7 @@
 <div class="container">
 	<% products.each do |product| %>
 	  <% if Spree::Config[:show_zero_stock_products] || product.has_stock? %>
-	  	<div class="span-16 product_inside push-3">
+	  	<div class="span-16 product_inside push-4">
   			<% if taxon.nil? %>
 		  	  	<div class= "column span-12 ">
 					<%= link_to small_image(product), product %>
