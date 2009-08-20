@@ -14,9 +14,7 @@
 	  <%end%>
 	  
 	  <div class="<%=class_name%>">	  
-  		<div class = "prepend-1">
-  			<font class="browsecatehead"><%= taxon.name%></font>
-		</div>
+  		<div class="browsecatehead"><%=taxon.name%></div>
 		<hr />
 		<%@taxons = Taxon.find(:all,:conditions => ['parent_id = ?' , taxon.id])%>
 		<div class="prepend-top" id="product-detail">

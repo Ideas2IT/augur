@@ -1,0 +1,24 @@
+<!-- search box -->
+<% if controller.controller_name == 'taxons'
+	  search_path_local = seo_url(@taxon)
+   elsif request.request_uri == '/' or request.request_uri == '/products' 
+	  search_path_local = 't/categories'	
+   else
+      search_path_local = products_path
+end -%>
+<div id="search_box" class="container">
+	<div class="span-18 prepend-top">
+		<div class="searchboxleft"></div>
+		<% form_tag search_path_local, :id => 'search_form', :method => 'get' do %>
+		  <div class="span-9 push-1">
+		  	<hr class="space"/>
+			<%= text_field_tag :keywords, params[:keywords] ,:class => "search_text_box"%>			  				  		
+		  </div>
+		  <div class="span-4 last">
+		  	<%= image_submit_tag "searchbutton.gif",:name => nil ,:class=>"search_button"%>	
+		  </div>
+		<% end %>
+		<div class="searchboxright"></div>
+	</div>
+</div>
+

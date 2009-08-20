@@ -1,40 +1,39 @@
 <div class="container">
 	<% products.each do |product| %>
 	  <% if Spree::Config[:show_zero_stock_products] || product.has_stock? %>
-	  	<div class="span-24">
-	  		<% if taxon.nil? %>
-	  	  	<div class= "column span-12">
-				<%= link_to small_image(product), product %>
-			</div>
-	  	  	<div class="column span-8">
-			<%= link_to product.name + "<span class='price selling'>#{product_price(product)}</span>", product, :class => "product_name" %>			  	
-			</div>
-	    <% else %>
-		   	<div class= "column span-4 prepend-4">
-				<%= link_to small_image(product), seo_url(taxon, product) %>			
-			</div>
-		    <div class="column span-8" id="product_link">
-				<li>
-					<%= link_to product.name , seo_url(taxon, product), :class=>"product_name" %><br/>  							  						   					   					   		
-				</li>
-				 <font class="product_available">
-				 	<%=show_text_available(product)%> <%=product.product_stores.count unless product.product_stores.empty?%> <%=show_text_store(product)%>
-				 </font>
-				 <div class="price_text">
-				 	prices starting from <%=link_to "<span class='price selling'>#{product_price(product)}</span>" , seo_url(taxon, product)%> 
-					<%product.product_stores.each do |product_store|%>
-						at <%=product_store.store.name%>
-					<%end%>	
-				 </div>	
-			</div>
-			<div class="span-7 last">
-				<div class="moredetails"> 
-					<%=link_to (image_tag 'see_details.gif') , seo_url(taxon, product)%>	
+	  	<div class="span-16 product_inside push-3">
+  			<% if taxon.nil? %>
+		  	  	<div class= "column span-12 ">
+					<%= link_to small_image(product), product %>
 				</div>
-			</div>
-			<hr class="space">
-		<% end %>
-	  	</div>
+		  	  	<div class="column span-8">
+				<%= link_to product.name + "<span class='price selling'>#{product_price(product)}</span>", product, :class => "product_name" %>			  	
+				</div>
+		    <% else %>
+		   		<div class= "column span-4 prepend-1">
+					<%= link_to small_image(product), seo_url(taxon, product) %>
+				</div>
+			    <div class="column span-8" id="product_link">
+					<li>
+						<%= link_to product.name , seo_url(taxon, product), :class=>"product_name" %><br/>  							  						   					   					   		
+					</li>
+					 <font class="product_available">
+					 	<%=show_text_available(product)%> <%=product.product_stores.count unless product.product_stores.empty?%> <%=show_text_store(product)%>
+					 </font>
+					 <div class="price_text">
+					 	prices starting from <%=link_to "<span class='price selling'>#{product_price(product)}</span>" , seo_url(taxon, product)%> 
+						<%product.product_stores.each do |product_store|%>
+							at <%=product_store.store.name%>
+						<%end%>	
+					 </div>	
+				</div>
+				<div class="span-2 last">
+					<div class="moredetails"> 
+						<%=link_to (image_tag 'see_details.gif') , seo_url(taxon, product)%>	
+					</div>
+				</div>
+			<% end %>
+		</div>
 	  <% end %>
 	<% end %>
 	
