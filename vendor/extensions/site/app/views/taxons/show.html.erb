@@ -4,7 +4,13 @@
 	  <%= render :partial => "shared/products.html.erb", :locals => {:products => @products, :taxon => @taxon } %>
 	  <%= page_links(:prev => "&#171; #{t('previous')}", :next => "#{t('next')} &#187;") if @search.page_count > 1 %>
 	<% else %>
+	  <%if taxon_preview(@taxon).size > 0%>	
 	  <%= render :partial => "taxon", :collection => @taxon.children %>
+	  <%else%>
+	  	<div class="data_not_found">
+	  		No data found	
+	  	</div>
+	  <%end%>
 	<% end %>
 </div>
 

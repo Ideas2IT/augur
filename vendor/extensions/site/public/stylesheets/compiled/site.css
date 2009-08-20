@@ -489,3 +489,5 @@ hr.space { background: #dddddd; color: #dddddd; clear: both; float: none; width:
 .searchboxright { background: transparent url(/images/searchboxright.gif) no-repeat scroll 0 0; float: left; height: 78px; width: 16px; }
 
 .search_button { padding-top: 25px; padding-left: 10px; }
+
+.data_not_found { line-height: 20px; font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: bold; color: #be2c2d; }

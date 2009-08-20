@@ -1,10 +1,11 @@
 <!-- search box -->
 <% if controller.controller_name == 'taxons'
-  search_path_local = seo_url(@taxon)
-else
-  search_path_local = products_path
+	  search_path_local = seo_url(@taxon)
+   elsif request.request_uri == '/' or request.request_uri == '/products' 
+	  search_path_local = 't/categories'	
+   else
+      search_path_local = products_path
 end -%>
-
 <div id="search_box" class="container">
 	<div class="span-18 prepend-top">
 		<div class="searchboxleft"></div>
