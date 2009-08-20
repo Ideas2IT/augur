@@ -29,7 +29,14 @@ end
         <%= render 'shared/store_menu' %>
       <% end %>
     </ul>
-   <%= link_to image_tag('/images/admin/bg/spree_50.png'), root_path %> 
+   <%= link_to image_tag('/images/admin/bg/spree_50.png'), root_path %>
+    <hr class="space"/>
+	<hr class="space"/>
+	<div class="span-24">
+	<%= render :partial => 'shared/search_box'%>
+	</div>
+	<hr class="space"/>
+	<hr class="space"/> 
   </div>
   <div class="container"> 
     <% if @content_for_sidebar %>
