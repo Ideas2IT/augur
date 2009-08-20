@@ -57,7 +57,7 @@ end
 
 def save_taxon(name, parent_name)
  parent = Taxon.find_by_name(parent_name)
- @taxon = Taxon.find_by_name(name, parent.id)
+ @taxon = Taxon.find_by_name_and_parent_id(name, parent.id)
  @taxon = Taxon.new if @taxon.nil? 
  @taxon.name= name
  @taxon.parent_id = parent.id unless parent.nil?
