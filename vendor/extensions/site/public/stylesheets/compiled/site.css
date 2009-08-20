@@ -437,7 +437,7 @@ hr { background: #dddddd; color: #dddddd; clear: both; float: none; width: 100%;
 
 hr.space { background: #dddddd; color: #dddddd; clear: both; float: none; width: 100%; height: .1em; margin: 0 0 1.45em; border: none; background: #fff; color: #fff; }
 
-.browsecatehead { border-bottom: 0px solid #f1f1f1; color: #be2c2d; font-family: Trebuchet MS, Arial, Helvetica, sans-serif; font-size: 13px; font-weight: bold; line-height: 30px; padding-left: 30px; width: 176px; }
+.browsecatehead { border-bottom: 0px solid #f1f1f1; color: #be2c2d; font-family: Trebuchet MS, Arial, Helvetica, sans-serif; font-size: 13px; font-weight: bold; line-height: 25px; width: 176px; padding-left: 20px; }
 
 .browsecatecontent { color: #006699; font-family: Trebuchet MS, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 24px; }
 
