@@ -458,7 +458,7 @@ body.two-col #content { display: inline; float: left; margin-right: 0; width: 75
 #header a { color: #2e6ab1; }
 #header a:hover { color: #e5f2f8; }
 
-#footer { display: inline; float: left; margin-right: 0; width: 950px; padding-top: 0.5em; clear: both; background: #F0F8F8 none repeat scroll 0; color: #009999; line-height: 24px; font-family: Arial,Helvetica,sans-serif; }
+#footer { display: inline; float: left; margin-right: 0; width: 950px; margin-top: 20px; padding-top: 0.5em; clear: both; background: #F0F8F8 none repeat scroll 0; color: #009999; line-height: 24px; font-family: Arial,Helvetica,sans-serif; }
 * html #footer { overflow-x: hidden; }
 #footer a { cursor: pointer!important; text-decoration: none; padding-left: 10px; color: #006C94; font-size: 12px; }
 
