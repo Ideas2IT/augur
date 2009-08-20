@@ -471,6 +471,8 @@ hr.space { background: #dddddd; color: #dddddd; clear: both; float: none; width:
 
 .seedeal { padding-top: 40px; }
 
+.price { font-weight: bold; color: #006085; }
+
 .product_head { color: #CC3333; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 16px; font-weight: bold; line-height: 24px; }
 
 #product_link li { list-style-type: none; margin-left: 0px; }
