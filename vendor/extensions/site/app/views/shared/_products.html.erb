@@ -21,7 +21,12 @@
 					 	<%=show_text_available(product)%> <%=product.product_stores.count unless product.product_stores.empty?%> <%=show_text_store(product)%>
 					 </font>
 					 <div class="price_text">
-					 	prices starting from <span class="price"><%=product.master_price%></span> 
+					 	<%price = starting_price(product)%>
+					 	<%unless price.nil?%>
+							prices starting from <span class="price"><%=product.master_price%></span> 
+						<%else%>
+							prices starting from <span class="price"><%=product.master_price%></span> 	
+						<%end%>
 						<%product.product_stores.each do |product_store|%>
 							at <%=product_store.store.name%>
 						<%end%>	
@@ -36,6 +41,5 @@
 		</div>
 	  <% end %>
 	<% end %>
-	
 </div>
 <hr class="space" />

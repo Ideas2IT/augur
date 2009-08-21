@@ -58,4 +58,9 @@ module ProductsHelper
     return store
   end
   
+  def starting_price(product)
+    price = ProductStore.find(:first , :conditions => ['product_id = ?' , product.id],:order => 'price asc')
+    return price
+  end
+  
 end
