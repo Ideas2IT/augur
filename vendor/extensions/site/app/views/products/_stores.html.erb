@@ -1,4 +1,35 @@
+<%count=1%>
 <%product.product_stores.each do |product_store|%>
-	<%=image_tag product_store.store.image_url%>
+	<div class="span-22" id="product_value">
+		<div class="span-4">
+			<font class="price-value">
+				<%=product_store.price%>
+			</font>
+		</div>
+		<div class="span-6">
+			<div class="product_store_logo">
+				<%=image_tag product_store.store.image_url%>
+			</div>
+		</div>
+		<div class="span-8">
+			<div class="product-desc">
+				<%= product_description(product) %>
+			</div>
+		</div>
+		<div class="span-4 last">
+			<div class="seedeal">
+				<%if product.product_stores.size == 0%> 
+				<%=image_tag 'seedeal.gif'%>
+				<%else%>
+				<%=link_to (image_tag 'seedeal.gif', :onclick => "javascript:call_more_details('#{@product.product_stores[0].description_url}')")%>
+				<%end%>
+			</div>
+		</div>
+		<%count += 1%>
+		<%if count <= product.product_stores.size%>
+			<hr class="horizontal_row">
+		<%end%>
+	</div>
 <%end%>
+
  

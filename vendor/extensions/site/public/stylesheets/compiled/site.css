@@ -499,3 +499,5 @@ hr.space { background: #dddddd; color: #dddddd; clear: both; float: none; width:
 .product_show_box { background-color: #EEEEEE; margin-right: 0em; padding: 6px; }
 
 .box_border .product_show_box { background-color: #EEEEEE; margin-right: 0em; padding: 6px; }
+
+.horizontal_row { border-bottom: 4px solid #F4F4F4; }
