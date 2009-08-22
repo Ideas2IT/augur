@@ -1,0 +1,48 @@
+<div class="container" id="product_compare">
+	<div class="compare_title">Compare Products</div>
+	<hr class="space">
+	<hr class="space">
+	<div class="span-24">
+	<%@products.each do |product|%>
+		<div class="span-5">
+			<div class="span-4 push-5">
+				<div class="image-border">
+					<%=small_image(product)%>		
+				</div>
+			</div>
+		</div>
+	<%end%>
+	</div>
+	<hr class="space">
+	<div class="span-24" id="column_head">
+		<div class="span-4 feature">
+			Feature
+		</div>	
+		<%@products.each do |product|%>
+			<div class="span-6 product_feature">
+				<%=product.name%>
+			</div>
+		<%end%>
+	</div>	
+	<div class="span-22">	
+		<div class="table-border">
+			<hr class="space">
+			<%@features.each do |feature|%>
+				<div class="span-4 feature">
+					<%=feature.name%><br/>
+				</div>
+				<%@products.each do |product|%>
+					<%available = check_feature_available(product,feature)%>
+					<div class="span-4 prepend-1">
+						<%if available == true%>
+							<%=image_tag "wright.jpg"%>
+						<%else%>
+							<%=image_tag "wrong.jpg"%>
+						<%end%>	
+					</div>
+				<%end%>
+				<hr class="space">
+			<%end%>
+		</div>
+	</div>
+</div>
