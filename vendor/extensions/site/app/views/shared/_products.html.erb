@@ -1,4 +1,11 @@
 <div class="container">
+	<%=form_tag (:controller => "products",:action => "compare")%>
+	<div class="span-24">
+		<div class="span-6 push-16">
+			<%=image_submit_tag "compare.gif" ,:alt => "Compare Now" %>
+		</div>
+	</div>
+		
 	<% products.each do |product| %>
 	  <% if Spree::Config[:show_zero_stock_products] || product.has_stock? %>
 	  	<div class="span-16 product_inside push-4">
@@ -10,10 +17,10 @@
 				<%= link_to product.name + "<span class='price selling'>#{product.master_price}</span>", product, :class => "product_name" %>			  	
 				</div>
 		    <% else %>
-		   		<div class= "column span-4 prepend-1">
+		   		<div class= "column span-2 prepend-1">
 					<%= link_to small_image(product), seo_url(taxon, product) %>
 				</div>
-			    <div class="column span-8" id="product_link">
+			    <div class="column span-8 push-1" id="product_link">
 					<li>
 						<%= link_to product.name , seo_url(taxon, product), :class=>"product_name" %><br/>  							  						   					   					   		
 					</li>
@@ -35,6 +42,9 @@
 				<div class="span-2 last">
 					<div class="moredetails"> 
 						<%=link_to (image_tag 'see_details.gif') , seo_url(taxon, product)%>	
+					</div>
+					<div class="compare"> 
+						<%=check_box_tag("product_compare[]",product.id)%>Compare
 					</div>
 				</div>
 			<% end %>

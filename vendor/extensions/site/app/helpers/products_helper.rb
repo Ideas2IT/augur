@@ -63,4 +63,13 @@ module ProductsHelper
     return price
   end
   
+  def check_feature_available(product,feature)
+    product_property = ProductProperty.find(:first,:conditions => ['product_id = ? and property_id = ?' , product.id , feature.id]) 
+    if product_property.nil?
+      return false
+    else
+      return true
+    end
+  end
+  
 end

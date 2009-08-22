@@ -15,6 +15,7 @@
 !fontfamily = "Trebuchet MS","Arial","Helvetica","sans-serif"
 !product_font_family = "Arial","Helvetica","sans-serif"
 !product_head = "Verdana","Arial","Helvetica","sans-serif"
+!compare_head = "Arial","Helvetica","sans-serif"
 !light_red = #D84734
 .browsecatehead 
 	:border-bottom = 0px "solid" #F1F1F1
@@ -102,7 +103,13 @@
 	:font-size 16px
 	:font-weight bold
 	:line-height 24px
-	
+.compare
+	:color = #3F520B
+	:font-family !fontfamily
+	:font-size 11px
+	:font-weight bold
+	:width 100px
+		
 #product_link
 	+no-bullets
 	li
@@ -116,7 +123,7 @@
 			&:hover
 				:background  #F4F4F4  no-repeat scroll 0 0
 .moredetails
-	:padding-top 25px
+	:padding-top 17px
 #search_box
 	:background url(/images/searchboxbg.gif) repeat-x scroll 0 50%
 	:height 78px
@@ -168,3 +175,31 @@
 	:padding 6px
 .horizontal_row
 	:border-bottom 4px solid #F4F4F4
+
+#product_compare
+	+no-bullets
+	+column(22)
+	:line-height 25px
+	:font-weight bold
+	.feature
+		:padding-left 25px		
+	.compare_title
+		:font-family = !compare_head
+		:color = #CC3333
+		:font-size 17px
+	.feature
+		:font-size 11px
+		:text-align left
+	.product_feature
+		:font-size 11px
+		:text-align left
+		:width 200px
+	.image-border
+		:border 2px solid #F4F4F4
+		:width 100px
+		:height 100px
+		:padding 20px
+	.table-border
+		:background-color #FCFCE1	
+		
+				
