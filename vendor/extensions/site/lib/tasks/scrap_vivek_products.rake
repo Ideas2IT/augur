@@ -17,6 +17,8 @@ namespace :scrap do
   end
 end
 def scrap_sub_ctgy_products(ctgy_name, sub_ctgy_id)
+  require "rexml/document"
+  require 'scrubyt'
   Hpricot.buffer_size = 204800
   Scrubyt.logger = Scrubyt::Logger.new
     ctgy= Scrubyt:: Extractor.define do
@@ -38,7 +40,9 @@ def scrap_sub_ctgy_products(ctgy_name, sub_ctgy_id)
 end 
 
 def load_products(ctgy_url, parent_taxon_name) 
-     Hpricot.buffer_size = 204800
+    require "rexml/document"
+    require 'scrubyt'
+    Hpricot.buffer_size = 204800
     Scrubyt.logger = Scrubyt::Logger.new
     produts = Scrubyt:: Extractor.define do     
     fetch ctgy_url
