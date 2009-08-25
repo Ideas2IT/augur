@@ -151,13 +151,13 @@ def save_product(product_name, description ,price , taxon_name,product_img_url, 
  else  
    @product.master_price = price.to_d
  end 
- @product.taxons << @taxon 
+ 
  @store = Store.find_by_name(store_name)
  @store = Store.new if @store.nil? 
  @store.name = store_name
  @store.image_url = store_url
  @store.save 
- @product.save
+ @product.save 
  
  @product_stores = ProductStore.find_by_product_id_and_store_id(@product.id, @store.id)
  @product_stores = ProductStore.new if @product_stores.nil? 
@@ -168,9 +168,13 @@ def save_product(product_name, description ,price , taxon_name,product_img_url, 
  @product.product_stores << @product_stores
  @product.save
  
+ if !@product.taxons.exists?(@taxon)   
+   @product.taxons << @taxon
+ end
+ 
  #delete old image of products
  @product.images.destroy_all
- @product.save
+ @product.save 
  
  @image = Image.new
  @image.viewable_type= "product"

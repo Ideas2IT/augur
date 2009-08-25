@@ -139,10 +139,6 @@ def save_product(product_name, description ,price , taxon_name,product_img_url, 
  else  
    @product.master_price = price.to_d
  end 
- if(!@product.taxons.exists?(@taxon))
-    puts "#{@product.id} and #{@taxon.id} saved"
-   @product.taxons << @taxon
- end
  
  @store = Store.find_by_name(store_name)
  @store = Store.new if @store.nil? 
@@ -159,7 +155,11 @@ def save_product(product_name, description ,price , taxon_name,product_img_url, 
  @product_stores.save
  @product.product_stores << @product_stores
  @product.save
- 
+
+ if !@product.taxons.exists?(@taxon)
+    puts "3333333333333333333333333333333#{@product.id} and #{@taxon.id} saved"
+   @product.taxons << @taxon
+ end
  #delete old image of products
  @product.images.destroy_all
  @product.save
@@ -170,6 +170,8 @@ def save_product(product_name, description ,price , taxon_name,product_img_url, 
  @image.attachment_file_name= product_img_url
  @image.attachment_content_type = "image/jpg"
  @image.save
+ 
+ 
 
  product_properties.each do |key, value| 
   puts "property type #{key}"
