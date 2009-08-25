@@ -128,11 +128,11 @@ def scrap_products_spot_eazy(taxon_name)
           store_image_url = store_image_url.gsub("&amp;", "&")
           store_name = store_element.elements['name'].text    
       }
-      save_product(product_name ,description, price, taxon_name, product_img_url, store_name,store_image_url, product_store_url)
+      save_products(product_name ,description, price, taxon_name, product_img_url, store_name,store_image_url, product_store_url)
     }
 end
 
-def save_product(product_name, description ,price , taxon_name,product_img_url, store_name, store_url, product_store_url)
+def save_products(product_name, description ,price , taxon_name,product_img_url, store_name, store_url, product_store_url)
  @taxon = Taxon.find_by_name(taxon_name) 
  unless price.nil?
    prices = price.split(' ') 
