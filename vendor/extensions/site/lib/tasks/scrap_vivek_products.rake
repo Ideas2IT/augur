@@ -156,8 +156,7 @@ def save_product(product_name, description ,price , taxon_name,product_img_url, 
  @product.product_stores << @product_stores
  @product.save
 
- if !@product.taxons.exists?(@taxon)
-    puts "3333333333333333333333333333333#{@product.id} and #{@taxon.id} saved"
+ if !@product.taxons.exists?(@taxon)   
    @product.taxons << @taxon
  end
  #delete old image of products
