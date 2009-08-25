@@ -15,7 +15,7 @@ class SiteExtension < Spree::Extension
   def activate
     # admin.tabs.add "Site", "/admin/site", :after => "Layouts", :visibility => [:all]
     AppConfiguration.class_eval do 
-      Spree::Config.set(:stylesheets => "compiled/screen,compiled/site")
+      #Spree::Config.set(:stylesheets => "compiled/screen,compiled/site")
       #Spree::Config[:stylesheets] => "compiled/screen,compiled/site"
         #preference :stylesheets, :string, :default => 'compiled/screen,compiled/site' 
     end
