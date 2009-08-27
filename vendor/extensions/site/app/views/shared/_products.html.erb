@@ -14,11 +14,16 @@
 					<%= link_to small_image(product), product %>
 				</div>
 		  	  	<div class="column span-8">
-				<%= link_to product.name + "<span class='price selling'>#{product.master_price}</span>", product, :class => "product_name" %>			  	
+					<%= link_to product.name + "<span class='price selling'>#{product.master_price}</span>", product, :class => "product_name" %>			  	
 				</div>
 		    <% else %>
 		   		<div class= "column span-2 prepend-1">
-					<%= link_to small_image(product), seo_url(taxon, product) ,:height=> 73 ,:width=> 73%>
+		   			<%if product.images.empty?%>
+						<%= image_tag "noimage/small.jpg", :height => 73,:width=>73%>
+				    <%else%>
+				      <%=image_tag product.images.first.attachment.url(:small),:height=>73,:width=>73%>
+				    <%end%>
+					<!--<%= link_to small_image(product),seo_url(taxon, product)%>-->
 				</div>
 			    <div class="column span-8 push-1" id="product_link">
 					<li>
@@ -53,3 +58,4 @@
 	<% end %>
 </div>
 <hr class="space" />
+<%=link_to "add_product" ,{:controller => "products" ,:action => "add_product"}%>

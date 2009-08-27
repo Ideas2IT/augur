@@ -513,3 +513,5 @@ hr.space { background: #dddddd; color: #dddddd; clear: both; float: none; width:
 #product_compare .product_feature { font-size: 11px; text-align: left; width: 200px; }
 #product_compare .image-border { border: 2px solid #F4F4F4; width: 100px; height: 100px; padding: 20px; }
 #product_compare .table-border { background-color: #FCFCE1; }
+
+.specification_box { background-color: #FCFCE1; border: 1px solid #F4F4F4; font-family: !fontfamily; font-size: 12px; font-weight: bold; font-color: #CC3333; text-align: center; }

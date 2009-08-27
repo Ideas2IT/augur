@@ -72,4 +72,15 @@ module ProductsHelper
     end
   end
   
+  def get_features_for_product(product)
+    @spec_map = Hash.new
+    product.properties.each do |property|
+      @spec_map[property.presentation] = []
+      product.product_properties.each do |product_property|
+        if product_property.property.presentation == property.presentation
+          @spec_map[property.presentation] << product_property
+        end  
+      end
+    end
+  end
 end

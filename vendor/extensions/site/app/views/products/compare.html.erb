@@ -7,7 +7,11 @@
 		<div class="span-5">
 			<div class="span-4 push-5">
 				<div class="image-border">
-					<%=small_image(product)%>		
+					<%if product.images.empty?%>
+					   <%=image_tag "noimage/small.jpg",:height => 73,:width=>73%>
+				    <%else%>
+				      <%=image_tag product.images.first.attachment.url(:small),:height=>73,:width=>73%>
+				    <%end%>		
 				</div>
 			</div>
 		</div>
